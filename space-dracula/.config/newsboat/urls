@@ -1,0 +1,23 @@
+"query:Tech News :tags # \"tech\""
+https://hnrss.org/frontpage "~· Hacker News FP" "tech"
+https://news.ycombinator.com/rss "~· YCombinator" "tech"
+https://lukesmith.xyz/rss.xml "~· Luke Smith (Blog)" tech"
+https://www.archlinux.org/feeds/news/ "~· Arch Linux News" "tech" "linux"
+https://feeds.feedburner.com/TechCrunch/ "~· TechCrunch" "tech"
+
+"query:Podcasts :tags # \"podcasts\""
+https://notrelated.xyz/rss "~· Not Related - Luke Smith" "tech" "podcasts"
+https://www.patreon.com/rss/RedScare?auth=V_5Jd1f5fMTACoqmZmJJ5i7QcLaZaAZT "~· Red Scare Pod" "podcasts"
+
+"query:Videos :tags # \"videos\""
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~· Luke Smith (YT)" "tech" "videos" "linux"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~· DistroTube" "linux" "videos"
+
+"query:World News :tags # \"news\""
+https://rss.nytimes.com/services/xml/rss/nyt/World.xml "~· New York Times" "news"
+
+
+"query:Reddit :tags # \"reddit\""
+https://www.reddit.com/r/linux/.rss "~· r/linux" "reddit"
+https://www.reddit.com/r/archlinux/.rss "~· r/archlinux" "reddit"
+https://www.reddit.com/r/unixporn/.rss "~· r/unixp*rn" "reddit"

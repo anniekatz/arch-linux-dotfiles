@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=silence-fan
+Path=/bin
+Exec=silence-fan
+StartupNotify=false
+Terminal=false
+Hidden=false
+

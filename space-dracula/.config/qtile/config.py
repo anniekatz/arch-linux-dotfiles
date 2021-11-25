@@ -70,7 +70,7 @@ keys = [
     Key([mod], "s",
         lazy.spawn("stacer"), desc="stacer"),
     Key([mod], "n",
-        lazy.spawn("kitty -e newsboat"), desc="newsboat"),
+        lazy.spawn("/bin/newsboat-fix"), desc="newsboat"),
     Key([mod], "g",
         lazy.spawn("gimp"), desc="gimp"),
     Key([mod], "i",

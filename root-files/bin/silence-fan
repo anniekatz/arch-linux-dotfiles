@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sleep 2
+sudo isw -w 16V1EMS1

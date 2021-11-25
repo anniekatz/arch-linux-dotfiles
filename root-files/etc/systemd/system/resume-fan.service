@@ -1,0 +1,9 @@
+[Unit]
+Description=Fanafter ession using slock for user %i
+After=sleep.target
+
+[Service]
+ExecStart=/bin/silence-fan
+
+[Install]
+WantedBy=sleep.target

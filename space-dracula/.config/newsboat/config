@@ -1,6 +1,6 @@
 auto-reload yes
 external-url-viewer "urlscan -dc -r 'linkhandler {}'"
-reload-threads 20
+reload-threads 30
 
 bind-key j down
 bind-key k up
@@ -21,7 +21,7 @@ bind-key D pb-download
 bind-key U show-urls
 bind-key x pb-delete
 
-max-items 300
+max-items 200
 
 feedlist-format "%4i %t (%c)"
 
@@ -33,7 +33,7 @@ color listfocus_unread white red bold
 color info cyan default bold
 color article white default dim
 
-highlight feedlist "(World News|Reddit|Events|Tech News|Podcasts|Videos|Social Media)" magenta default bold
+highlight feedlist "(World & Local News|Stonks|Reddit|Events|Tech|Blogs|Podcasts|Videos|Social Media|Linux GNUs)" magenta default bold
 
 articlelist-format "%4i  %D  %t %T"
 

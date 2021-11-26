@@ -41,7 +41,7 @@ highlight article "^(Feed|Title|Author|Link|Date):.*" blue
 highlight article "\\[[0-9][0-9]*\\]" green
 highlight article "\\[image [0-9][0-9]*\\]" red
 
-browser "brave"
+browser "qutebrowser"
 
 download-retries 4
 download-timeout 10

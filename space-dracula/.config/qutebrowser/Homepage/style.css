@@ -8,6 +8,7 @@ body {
     line-height: 0.1;
     text-align: center;
     font-family: 'Share Tech Mono', monospace;
+    font-weight: bold;
 }
 @media all and (max-width: 550px) {
     .info, hr
@@ -52,86 +53,26 @@ a:hover {
     color: #97cdfd !important
 }
 #greeting {
-    font-size: 32px;
+    font-size: 40px;
     color: #ffefff;
 }
 #time {
-    font-size: 28px;
-    animation:blinking 5s infinite;
-    }
-    @keyframes blinking{
-    0%{     color: #1383F2; }
-    20%{    color: #459EF7; }
-    40%{    color: #77B8F8; }
-    60%{    color: #77B8F8; }
-    80%{    color: #459EF7; }
-    100%{   color: #1383F2; }
+    font-size: 35px;
+    color: #1383F2; 
 }
 
 #w {
-    animation:w_blink 5s infinite;
-    }
-    @keyframes w_blink{
-    0%{     color: #9866ED; }
-    20%{    color: #9B67F5; }
-    40%{    color: #9873D9; }
-    60%{    color: #834CE0; }
-    80%{    color: #7739E3; }
-    100%{   color: #9866ED; }
-}
+    color: #9866ED; }
+
 #s {
-    animation:s_blink 5s infinite;
-    }
-    @keyframes s_blink{
-    0%{     color: #5BE3AF; }
-    20%{    color: #22AB76; }
-    40%{    color: #1FC485; }
-    60%{    color: #5EB895; }
-    80%{    color: #66D9AD; }
-    100%{   color: #5BE3AF; }
+    color: #30db47;
 }
 #d {
-    animation:d_blink 5s infinite;
-    }
-    @keyframes d_blink{
-    0%{     color: #D1B22A; }
-    20%{    color: #D9C777; }
-    40%{    color: #D1B22A; }
-    60%{    color: #CCA806; }
-    80%{    color: #E0BE24; }
-    100%{   color: #D1B22A; }
+    color: #D1B22A; 
 }
+
 #l {
-    animation:l_blink 5s infinite;
-    }
-    @keyframes l_blink{
-    0%{     color: #b30d55; }
-    20%{    color: #e30e55; }
-    40%{    color: #b30d55; }
-    60%{    color: #e30e55; }
-    80%{    color: #b30d55; }
-    100%{   color: #e30e55; }
-}
-#youtube:hover {
-    color: #FF0000 !important
-}
-#netflix:hover{
-    color: #E50914 !important
-}
-#twitch:hover{
-    color: #6441a5 !important
-}
-#reddit:hover{
-    color: #FF4500 !important
-}
-#twitter:hover{
-    color: #08a0e9 !important
-}
-#arch:hover {
-    color: #1793d1 !important
-}
-#stackoverflow:hover {
-    color: #EF8236 !important
+    color: #b30d55; 
 }
 .mode_class{
     /*display: flex;

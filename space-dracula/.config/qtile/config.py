@@ -31,10 +31,9 @@ keys = [
 
     # POWER KEYS
 
-    Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.restart(), desc="Restart Qtile"),
-    Key([mod2, mod], "q", lazy.spawn(home + '/.config/rofi/powermenu/powermenu.sh')),
+    Key([mod, "shift"], "q", lazy.spawn(home + '/.config/rofi/powermenu/powermenu.sh')),
 
 
     # Apps and Launchers
@@ -66,15 +65,17 @@ keys = [
     Key([mod], "m",
         lazy.spawn("mullvad-vpn"), desc="mullvad vpn"),
     Key([mod], "p",
-        lazy.spawn("pamac-manager"), desc="pamac-manager"),
+        lazy.spawn("org.gimp.GIMP"), desc="picture editor GIMP"),
     Key([mod], "s",
         lazy.spawn("stacer"), desc="stacer"),
     Key([mod], "n",
-        lazy.spawn("/bin/newsboat-fix"), desc="newsboat"),
+        lazy.spawn(home + "/.local/bin/newsboat-fix"), desc="newsboat"),
     Key([mod], "g",
-        lazy.spawn("gimp"), desc="gimp"),
+        lazy.spawn("github-desktop"), desc="github-desktop"),
     Key([mod], "i",
-        lazy.spawn("inkscape"), desc="inkscape"),
+        lazy.spawn("org.inkscape.INKSCAPE"), desc="inkscape"),
+    Key([mod], "r",
+        lazy.spawn("kitty -e ranger"), desc="ranger"),
     Key([mod], "e",
         lazy.spawn("subl"), desc="sublime text"),
      Key([mod], "z",
@@ -106,7 +107,7 @@ keys = [
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -q sset Master 5%+")),
 
     #Print Screen
-    Key([mod, "shift"], "F12", lazy.spawn("scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
+    Key([mod], "F12", lazy.spawn("scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
     Key([mod, "shift"], "s", lazy.spawn("scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
 
     # QTILE KEYS
@@ -669,6 +670,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(title='pinentry'),
     Match(wm_class='dialog'),
     Match(wm_class='download'),
+    #Match(wm_class='steam'),
     Match(wm_class='error'),  # GPG key password entry
 ])
 

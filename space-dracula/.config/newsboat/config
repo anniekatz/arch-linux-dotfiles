@@ -33,7 +33,7 @@ color listfocus_unread white red bold
 color info cyan default bold
 color article white default dim
 
-highlight feedlist "(World & US News|Stonks|Reddit|Events|Tech News|Blogs/Leisure|Podcasts|Videos|Social Media|Linux GNUs)" magenta default bold
+highlight feedlist "(Boring News|Stonks|Reddit|Events|Tech News|Blogs/Leisure|Podcasts|Videos|Social Media|Linux GNUs)" magenta default bold
 
 articlelist-format "%4i  %D  %t %T"
 

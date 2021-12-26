@@ -1,0 +1,17 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AutoPEP8",
+		"Dark Neon Color Scheme",
+		"Dracula Color Scheme",
+		"Package Control",
+		"Python 3",
+		"RichTextFormat",
+		"Theme - Argonaut",
+		"WordCount",
+	],
+}

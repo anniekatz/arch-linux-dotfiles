@@ -1,0 +1,47 @@
+auto-reload yes
+external-url-viewer "urlscan -dc -r 'linkhandler {}'"
+reload-threads 30
+
+bind-key j down
+bind-key k up
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key G end
+bind-key g home
+bind-key d pagedown
+bind-key u pageup
+bind-key l open
+bind-key h quit
+bind-key a toggle-article-read
+bind-key n next-unread
+bind-key N prev-unread
+bind-key D pb-download
+bind-key U show-urls
+bind-key x pb-delete
+
+max-items 200
+
+feedlist-format "%4i %t (%c)"
+
+color background cyan default
+color listnormal white default dim
+color listfocus white red bold
+color listnormal_unread white default
+color listfocus_unread white red bold
+color info cyan default bold
+color article white default dim
+
+highlight feedlist "(Boring News|Stonks|Reddit|Events|Tech News|Blogs/Leisure|Podcasts|Videos|Social Media|Linux GNUs)" magenta default bold
+
+articlelist-format "%4i  %D  %t %T"
+
+highlight article "^(Feed|Title|Author|Link|Date):.*" blue
+highlight article "\\[[0-9][0-9]*\\]" green
+highlight article "\\[image [0-9][0-9]*\\]" red
+
+browser "qutebrowser"
+
+download-retries 4
+download-timeout 10

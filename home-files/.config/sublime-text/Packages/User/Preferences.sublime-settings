@@ -1,0 +1,9 @@
+{
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"theme": "Argonaut.sublime-theme",
+	"color_scheme": "Packages/Dark Neon Color Scheme/DarkNeon.tmTheme",
+	"font_size": 12,
+}

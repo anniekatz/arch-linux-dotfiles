@@ -1,6 +1,5 @@
 # Dotfiles
-for when I want to wipe my poor SSD and start over for the 67th time
-
+for when I want to wipe my poor SSD and start over for the 300th time
 
 ## Theme info
 

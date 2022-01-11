@@ -17,12 +17,13 @@
 	* Warning: manipulating disk may remove data
 	''' cfdisk /dev/nvme0n1 '''
 	* Disk to be partitioned as:
-		* | Partition             | Size      | Type             |
-		* |-----------------------|-----------|------------------|
-		* | nvme0n1p1             | 512 M     | EFI System       |
-		* | nvme0n1p2             | Over 50 G | Linux filesystem |
-		* | Free Space/Other OSes |           |                  |
-
+	
+		| Partition             | Size      | Type             |
+		|-----------------------|-----------|------------------|
+		| nvme0n1p1             | 512 M     | EFI System       |
+		| nvme0n1p2             | Over 50 G | Linux filesystem |
+		| Free Space/Other OSes |           |                  |
+	
 		* Remember to leave space at the end of SSD for good practice
 
 6. Make file systems

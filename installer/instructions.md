@@ -13,6 +13,7 @@
 	* wifi stations are usualy wlan0, wlo1, etc.
 
 4. Refresh servers
+	
 	> pacman -Syy
 
 5. Partition disk (ex. nvme0n1) using fdisk, gdisk or cfdisk

@@ -81,7 +81,7 @@ papirus-folders
 papirus-icon-theme
 patch
 pavucontrol
-pcmanfm
+pcmanfm-gtk3
 picom-ibhagwan-git
 pipewire
 pipewire-alsa

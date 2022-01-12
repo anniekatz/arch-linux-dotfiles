@@ -14,7 +14,7 @@ echo "127.0.1.1 computer.localdomain computer" >> /etc/hosts
 # replace <PASSWORD> with chosen password
 echo root:<PASSWORD> | chpasswd
 
-pacman -S grub efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools reflector base-devel linux-headers xdg-user-dirs xdg-utils gvfs gvfs-smb gvfs-nfs gvfs-afc nfs-utils bash-completion rsync reflector acpi acpi_call upower openbsd-netcat iptables-nft ipset firewalld flatpak sof-firmware nss-mdns os-prober ntfs-3g
+pacman -S grub efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools reflector base-devel linux-headers xdg-user-dirs xdg-utils gvfs gvfs-smb gvfs-afc bash-completion rsync reflector acpi acpi_call upower openbsd-netcat iptables-nft ipset firewalld flatpak os-prober ntfs-3g
 
 pacman -S --noconfirm xf86-video-intel
 pacman -S --noconfirm nvidia nvidia-utils nvidia-settings

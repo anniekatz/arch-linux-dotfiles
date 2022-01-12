@@ -7,7 +7,7 @@ ant-dracula-kvantum-theme-git
 ant-dracula-theme-git
 appimagelauncher
 arch-audit
-auto-cpufreq-git
+auto-cpufreq
 autopep8
 awesome-terminal-fonts
 bitwarden
@@ -128,15 +128,10 @@ usb_modeswitch
 virtualbox
 virtualbox-ext-oracle
 virtualbox-ext-vnc
-vkd3d
 volumeicon
 vulkan-extra-layers
 vulkan-extra-tools
-vulkan-html-docs
 vulkan-intel
-vulkan-mesa-layers
-vulkan-tools
-vulkan-validation-layers
 wget
 xarchiver
 xclip

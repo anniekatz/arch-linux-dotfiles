@@ -24,6 +24,8 @@ yay -S - < ~/Dotfiles/installer/installed-packages/packages-for-script.txt
 
 sleep 3
 
+mkdir .local/bin
+
 cp -r ~/Dotfiles/home/.local/bin/* ~/.local/bin/
 cp -r ~/Dotfiles/home/.config/autostart ~/.config/
 cp -r ~/Dotfiles/home/.config/dunst ~/.config/

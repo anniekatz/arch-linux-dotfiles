@@ -32,6 +32,8 @@ gst-libav
 gst-plugin-pipewire
 gst-plugins-good
 gst-plugins-base
+gst-plugins-bad
+gst-plugins-ugly
 gtk-engine-murrine
 htop
 hwdetect

@@ -79,25 +79,28 @@
 	> umount -a
 	> reboot
 
-17. Log in as user with username and password
+16. Log in as user with username and password
 
-18. Configure WiFi
+17. Configure WiFi
 	
 	> nmtui
 
-19. Enable multilib repo
+18. Enable multilib repo
 	* Edit /etc/pacman.conf to uncomment [multilib] and following line
 
-20. Refresh and update
+	> sudo nvim /etc/pacman.conf
 	
-	> pacman -Syu
+19. Refresh and update
+	
+	> sudo pacman -Syu
 
-21. Run post-install script
+20. Run post-install script
 	
+	> sudo chown -R annie:users ./Dotfiles/*
 	> chmod +x ~/Dotfiles/installer/post-install-script.sh
 	> ~/Dotfiles/installer/post-install-script.sh
 
-22. Configure grub to work with MSI fan
+21. Configure grub to work with MSI fan
 	
 	> sudo nvim /etc/default/grub
 	
@@ -105,12 +108,12 @@
 	
 	> sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-23. Generate new initramfs
+22. Generate new initramfs
 	* Edit /etc/mkinitcpio.conf to include (i915, nvidia, nvidia_drm, nvidia_modeset) in MODULES then regenerate
 	
-	> mkinitcpio -p linux
+	> sudo mkinitcpio -p linux
 	
-24. Become super-user and run second post-install script
+23. Become super-user and run second post-install script
 	
 	> sudo su
 

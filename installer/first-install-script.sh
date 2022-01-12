@@ -34,7 +34,7 @@ echo annie:<PASSWORD> | chpasswd
 usermod -aG wheel annie
 
 # change permissions for wheel group
-echo "wheel ALL=(ALL) ALL" >> /etc/sudoers
+echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 # fan permissions with MSI computer
 echo "ALL ALL=(ALL) NOPASSWD: /bin/isw" >> /etc/sudoers
 echo "ALL ALL=(ALL) NOPASSWD: /usr/bin/isw" >> /etc/sudoers

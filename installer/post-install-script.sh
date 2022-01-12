@@ -42,6 +42,7 @@ cp -r ~/Dotfiles/home/.config/redshift ~/.config/
 cp -r ~/Dotfiles/home/.bashrc ~/
 cp -r ~/Dotfiles/home/.xinitrc ~/
 cp -r ~/Dotfiles/home/.xprofile ~/
+cp -r ~/Dotfiles/home/wallpapers ~/Pictures/
 
 chmod +x ~/.local/bin/list-keybindings
 chmod +x ~/.local/bin/newsboat-fix

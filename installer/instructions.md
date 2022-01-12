@@ -69,6 +69,8 @@
 	
 		> ./Dotfiles/installer/first-install-script.sh
 
+	* Follow prompts
+
 14. Move Dotfiles repo
 	
 	> mv Dotfiles /home/annie/
@@ -100,6 +102,8 @@
 	> chmod +x ~/Dotfiles/installer/post-install-script.sh
 	> ~/Dotfiles/installer/post-install-script.sh
 
+	* Follow prompts. (Install wireguard instead of pipewire-media-session)
+	
 21. Configure grub to work with MSI fan
 	
 	> sudo nvim /etc/default/grub

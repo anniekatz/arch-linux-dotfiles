@@ -59,25 +59,21 @@
 
 12. Clone Dotfiles repo
 	
-	> git clone https://github.com/anniekatz/dotfiles 
+	> git clone https://github.com/anniekatz/Dotfiles 
 
 13. Run base install script
 	* Edit script first with neovim to include chosen username, passwords, hostname, etc.
 	* Run script
 	
-		> chmod +x ./Dotfiles/installer/first-install-script.sh 
+		> chmod +x ./Dotfiles/installer/first-install-script.sh
+	
 		> ./Dotfiles/installer/first-install-script.sh
 
-14. Generate new initramfs
-	* Edit /etc/mkinitcpio.conf to include (i915, nvidia, nvidia_drm, nvidia_modeset) in MODULES then regenerate
-	
-	> mkinitcpio -p linux
-
-15. Move Dotfiles repo
+14. Move Dotfiles repo
 	
 	> mv Dotfiles /home/annie/
 
-16. Exit and reboot
+15. Exit and reboot
 	
 	> exit
 	> umount -a
@@ -104,15 +100,23 @@
 22. Configure grub to work with MSI fan
 	
 	> sudo nvim /etc/default/grub
-	* Edit file to include modules "loglevel=3 quiet ec_sys.write_support=1" in GRUB_CMDLINE_LINUX_DEFAULT line and add the line GRUB_DISABLE_OS_PROBER=false
+	
+	* Edit file to include module "ec_sys.write_support=1" in GRUB_CMDLINE_LINUX_DEFAULT line and add the line GRUB_DISABLE_OS_PROBER=false
 	
 	> sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-23. Become super-user and run second post-install script
+23. Generate new initramfs
+	* Edit /etc/mkinitcpio.conf to include (i915, nvidia, nvidia_drm, nvidia_modeset) in MODULES then regenerate
+	
+	> mkinitcpio -p linux
+	
+24. Become super-user and run second post-install script
 	
 	> sudo su
+
 	> chmod +x ~/Dotfiles/installer/second-post-install-script.sh
-	> ~/Dotfiles/installer/second-post-install-script.sh
+	
+	> Dotfiles/installer/second-post-install-script.sh
 
 24. Reboot into newly configured system
 	

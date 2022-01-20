@@ -8,6 +8,3 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 export QT_QPA_PLATFORMTHEME=qt5ct
 export EDITOR=nvim
 export VISUAL=nvim
-
-
-gnome-keyring-daemon --start --components=pkcs11 &

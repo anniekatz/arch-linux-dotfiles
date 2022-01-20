@@ -16,7 +16,6 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
 	Plug 'tpope/vim-commentary'
 	Plug 'ap/vim-css-color'
 	Plug 'lukesmithxyz/vimling'
-	Plug 'andweeb/presence.nvim'
 	Plug 'morhetz/gruvbox'
 	Plug 'shinchu/lightline-gruvbox.vim'
 call plug#end()
@@ -51,10 +50,10 @@ let g:lightline = {
 "let g:lightline = {
 "	  \ 'background': 'dark',
 "	  \ 'colorscheme': 'dracula',
-"}
+"	  \ }
 
 :hi normal guibg=0000000
-set bg=dark
+" set bg=dark
 
 
 " Disables automatic commenting on newline:

@@ -1,33 +1,24 @@
 # Choose theme here
-from themes import vault
-colors = vault.init_colors()
-
-# Other imports needed
 import os
-import re
 import socket
 import subprocess
-import psutil
-
-from typing import List
-
-from libqtile import bar, layout, widget, hook
-from libqtile.config import KeyChord, Key, Screen, Group, Drag, Click, ScratchPad, DropDown, Match, Rule
-from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
-from libqtile.command import lazy
-from libqtile import qtile
-from libqtile.widget import Spacer
 from datetime import datetime
+from typing import List
+from libqtile import bar, layout, widget, hook
+from libqtile import qtile
+from libqtile.config import Key, Screen, Group, Drag, Match
+from libqtile.lazy import lazy
 
+# Theme Choice
+from themes import vault
+
+colors = vault.init_colors()
 
 mod = "mod4"
 mod2 = "control"
 mod1 = "mod1"
-#mod1 = "alt"
 home = os.path.expanduser('~')
 folder = os.path.expanduser('~/.config/qtile')
-
 
 today = datetime.today()
 terminal = "kitty"
@@ -39,8 +30,8 @@ keys = [
 
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.restart(), desc="Restart Qtile"),
-    Key([mod, "shift"], "q", lazy.spawn(home + '/.config/rofi/powermenu/powermenu.sh')),
-
+    Key([mod, "shift"], "q", lazy.spawn(
+        home + '/.config/rofi/powermenu/powermenu.sh')),
 
     # Apps and Launchers
     # SUPER KEY
@@ -50,8 +41,8 @@ keys = [
         lazy.spawn("dmenu_run"), desc="dmenu"),
     Key([mod], "t",
         lazy.spawn("timeshift-launcher"), desc="timeshift"),
-	Key([mod], "Return",
-		lazy.spawn(terminal), desc="kitty"),
+    Key([mod], "Return",
+        lazy.spawn(terminal), desc="kitty"),
     Key([mod], "b",
         lazy.spawn(browser), desc="brave"),
     Key([mod], "c",
@@ -84,7 +75,7 @@ keys = [
         lazy.spawn("kitty -e ranger"), desc="ranger"),
     Key([mod], "e",
         lazy.spawn("subl"), desc="sublime text"),
-     Key([mod], "z",
+    Key([mod], "z",
         lazy.spawn("notion-app-enhanced"), desc="notion"),
 
     # SETTINGS KEYS
@@ -99,8 +90,6 @@ keys = [
         lazy.spawn("qt5ct"), desc="qt5 settings"),
     Key([mod1], "t",
         lazy.spawn("lxtask"), desc="task manager"),
- #   Key([mod1], "s",
- #       lazy.spawn("xfce4-settings-manager"), desc="all settings"),
 
     # MULTIMEDIA/OTHER FUNCTIONS
     # INCREASE/DECREASE BRIGHTNESS
@@ -112,9 +101,11 @@ keys = [
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -q sset Master 5%-")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -q sset Master 5%+")),
 
-    #Print Screen
-    Key([mod], "F12", lazy.spawn("scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
-    Key([mod, "shift"], "s", lazy.spawn("scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
+    # Print Screen
+    Key([mod], "F12", lazy.spawn(
+        "scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
+    Key([mod, "shift"], "s", lazy.spawn(
+        "scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
 
     # QTILE KEYS
     # MOD KEYS
@@ -188,15 +179,15 @@ keys = [
 
     # Layout changing
     Key([mod2], "space",
-		lazy.next_layout(),
-		desc="Toggle between layouts"),
+        lazy.next_layout(),
+        desc="Toggle between layouts"),
     Key([mod2], "n",
-		lazy.layout.normalize(),
+        lazy.layout.normalize(),
         desc="Reset all window sizes"),
     Key([mod2], "m",
-		lazy.window.toggle_fullscreen()),
+        lazy.window.toggle_fullscreen()),
     Key([mod2, "shift"], "f",
-		lazy.window.toggle_floating()),
+        lazy.window.toggle_floating()),
 
     # Treetab controls
     Key([mod2, mod1], "k",
@@ -252,9 +243,9 @@ layouts = [
 
 groups = []
 group_names = ["1", "2", "3", "4", "5", "6"]
-group_labels = ["", "","", "", "", "", ]
+group_labels = ["", "", "", "", "", "", ]
 group_layouts = ["floating", "monadtall",
-                 "monadtall", "monadtall", "monadtall", "treetab"]
+                 "monadtall", "monadtall", "monadtall", "floating"]
 
 for i in range(len(group_names)):
     groups.append(
@@ -264,30 +255,16 @@ for i in range(len(group_names)):
             label=group_labels[i],
         ))
 
-def window_to_prev_group(qtile):
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i - 1].name)
-
-def window_to_next_group(qtile):
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i + 1].name)
-
-
 for i in groups:
-    keys.extend([
+    keys.extend({
 
         # CHANGE WORKSPACES
         Key([mod], i.name, lazy.group[i.name].toscreen()),
         Key([mod], "Right", lazy.screen.next_group()),
         Key([mod], "Left", lazy.screen.prev_group()),
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name), lazy.group[i.name].toscreen()),
-	#	Key([mod, "shift"], "Right", lazy.window_to_next_group()),
-        #Key([mod2, "shift"], "Right", lazy.window.togroup((i.name)+1), lazy.group[(i.name)+1].toscreen()),
-
-    ])
-
+        Key([mod, "shift"], i.name, lazy.window.togroup(
+            i.name), lazy.group[i.name].toscreen()),
+    })
 
 
 def init_widgets_defaults():
@@ -308,16 +285,15 @@ def open_pavu():
 def open_rofilauncher():
     qtile.cmd_spawn("./.config/rofi/launchers/misc/launcher.sh")
 
+
 def open_powermenu():
-	qtile.cmd_spawn("./.config/rofi/powermenu/powermenu.sh")
+    qtile.cmd_spawn("./.config/rofi/powermenu/powermenu.sh")
 
+prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
-def base(fg='text', bg='dark'):
-    return {'foreground': colors[8], 'background': colors[12]}
-
+# Widgets on the bar
 
 def init_widgets_list():
-    prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
     widgets_list = [
         widget.Sep(
             linewidth=1,
@@ -333,26 +309,23 @@ def init_widgets_list():
             mouse_callbacks={"Button1": open_rofilauncher},
         ),
         widget.GroupBox(
-            **base(bg=colors[12]),
+            bg=colors[12],
+            fg=colors[8],
             fontsize=14,
             borderwidth=3,
-            #margin_y=3,
-            #margin_x=3,
             padding_y=5,
             padding_x=6,
             active=colors[0],
             inactive=colors[1],
             rounded=True,
-            #hide_unused = False,
             highlight_color=colors[1],
             highlight_method="block",
             this_current_screen_border=colors[13],
             this_screen_border=colors[1],
             other_current_screen_border=colors[1],
             other_screen_border=colors[1],
-
         ),
-       widget.TextBox(
+        widget.TextBox(
             text="",
             fontsize=23,
             background=colors[12],
@@ -363,36 +336,41 @@ def init_widgets_list():
             text="",
             fontsize=23,
             background=colors[13],
-            foreground=colors[12],
+            foreground=colors[2],
             padding=0
         ),
         widget.TextBox(
             text="",
             fontsize=23,
-            background=colors[12],
+            background=colors[2],
             foreground=colors[13],
             padding=0
         ),
-         widget.CurrentLayoutIcon(
+        widget.Sep(
+            linewidth=1,
+            padding=5,
+            foreground=colors[13],
+            background=colors[13],
+        ),
+        widget.CurrentLayoutIcon(
             custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
             foreground=colors[0],
             background=colors[13],
             padding=5,
-            #scale=0.8,
+            scale=0.8,
         ),
         widget.TaskList(
             font='Hack Nerd Font',
             fontsize=13,
-            borderwidth=0,
             padding=3,
             margin_x=5,
             margin_y=3,
             highlight_method='block',
-            foreground=colors[1],
+            foreground=colors[0],
             border=colors[2],
             background=colors[13],
             max_title_width=200,
-            icon_size=17,
+            icon_size=20,
         ),
         widget.Spacer(
             background=colors[13],
@@ -430,63 +408,71 @@ def init_widgets_list():
             font="icomoon-feather bold",
             fontsize=12,
             background=colors[13],
-            foreground=colors[0],
+            foreground=colors[10],
             padding=0,
         ),
         widget.Memory(
             font="Hack Nerd Font Bold",
-            fontsize=12,
+            fontsize=11.5,
             background=colors[13],
             foreground=colors[1],
             format='{MemUsed: .0f} MB ',
+            padding_y=4,
         ),
         widget.TextBox(
             text="",
-            fontsize=23,
+            fontsize=16,
             background=colors[13],
-            foreground=colors[12],
+            foreground=colors[2],
             padding=0
         ),
         widget.TextBox(
             text="",
-            fontsize=23,
-            background=colors[12],
+            fontsize=16,
+            background=colors[2],
             foreground=colors[13],
             padding=0
         ),
         widget.TextBox(
-            text="  ",
+            text="   ",
             font="icomoon-feather bold",
             fontsize=12,
-            foreground=colors[0],
+            foreground=colors[10],
             background=colors[13],
             padding=0
         ),
         widget.CPU(
             font="Hack Nerd Font Bold",
-            fontsize=12,
+            fontsize=11.5,
             foreground=colors[1],
+            background=colors[13],
+            padding_y=4,
+        ),
+        widget.Sep(
+            linewidth=1,
+            padding=7,
+            foreground=colors[13],
             background=colors[13],
         ),
         widget.TextBox(
             text="",
-            fontsize=23,
+            fontsize=16,
             background=colors[13],
-            foreground=colors[12],
+            foreground=colors[2],
             padding=0
         ),
         widget.TextBox(
             text="",
-            fontsize=23,
-            background=colors[12],
+            fontsize=16,
+            background=colors[2],
             foreground=colors[13],
-            padding=1
+            padding=0
         ),
         widget.Sep(
             linewidth=1,
-            padding=5,
+            padding=7,
             foreground=colors[13],
-            background=colors[13]
+            background=colors[13],
         ),
         widget.Battery(
             format='{percent:2.0%}',
@@ -496,9 +482,8 @@ def init_widgets_list():
         ),
         widget.Systray(
             background=colors[13],
-            foreground=colors[0],
-            padding=2,
-            margin=2,
+            padding=3,
+            margin=4,
         ),
         widget.TextBox(
             text="",
@@ -523,22 +508,34 @@ def init_widgets_list():
             padding=4
         ),
         widget.TextBox(
-            text=" ",
-            font="icomoon-feather bold",
-            fontsize=12,
+            text="",
+            fontsize=23,
             background=colors[12],
-            foreground=colors[0],
-            padding=2
+            foreground=colors[1],
+            padding=0
+        ),
+        widget.TextBox(
+            text="",
+            fontsize=23,
+            background=colors[1],
+            foreground=colors[12],
+            padding=0
+        ),
+        widget.TextBox(
+            text="  ",
+            font="icomoon-feather bold",
+            fontsize=11.5,
+            background=colors[12],
+            foreground=colors[10],
         ),
         widget.Clock(
             font="Hack Nerd Font",
             fontsize=12.5,
             background=colors[12],
             foreground=colors[0],
-            padding_y=3,
-            #mouse_callbacks={"Button1": open_calendar},
+            padding=4,
         ),
-         widget.TextBox(
+        widget.TextBox(
             text="",
             fontsize=12,
             background=colors[12],
@@ -553,12 +550,12 @@ def init_widgets_list():
             padding=0
         ),
         widget.TextBox(
-		    text="⏻ ",
-		    foreground=colors[10],
-		    fontsize=13,
-		    padding=10,
-		    mouse_callbacks={"Button1": open_powermenu},
-		),
+            text="⏻ ",
+            foreground=colors[10],
+            fontsize=13,
+            padding=10,
+            mouse_callbacks={"Button1": open_powermenu},
+        ),
     ]
     return widgets_list
 
@@ -581,12 +578,11 @@ widgets_screen2 = init_widgets_screen2()
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26, opacity=1, border_width=[0,0,2,0])),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26, opacity=1, border_width=[0,0,2,0]))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26, opacity=1)),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26, opacity=1))]
 
 
 screens = init_screens()
-
 
 # Drag floating layouts.
 mouse = [
@@ -635,7 +631,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(title='pinentry'),
     Match(wm_class='dialog'),
     Match(wm_class='download'),
-    #Match(wm_class='steam'),
+    # Match(wm_class='steam'),
     Match(wm_class='error'),  # GPG key password entry
 ])
 

@@ -24,6 +24,7 @@ exfat-utils
 fakeroot
 ffmpegthumbnailer
 flatpak
+fzf
 github-desktop
 glxinfo
 gnome-disk-utility
@@ -110,6 +111,7 @@ stacer
 thermald
 timeshift
 tlp
+tmux
 ttf-anonymous-pro
 ttf-icomoon-feather
 ttf-joypixels

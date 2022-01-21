@@ -308,6 +308,13 @@ def init_widgets_list():
             margin_x=7,
             mouse_callbacks={"Button1": open_rofilauncher},
         ),
+        widget.TextBox(
+            text="",
+            fontsize=23,
+            background=colors[12],
+            foreground=colors[14],
+            padding=0
+        ),
         widget.GroupBox(
             bg=colors[12],
             fg=colors[8],
@@ -324,13 +331,6 @@ def init_widgets_list():
             this_screen_border=colors[1],
             other_current_screen_border=colors[1],
             other_screen_border=colors[1],
-        ),
-        widget.TextBox(
-            text="",
-            fontsize=23,
-            background=colors[12],
-            foreground=colors[13],
-            padding=0
         ),
         widget.TextBox(
             text="",

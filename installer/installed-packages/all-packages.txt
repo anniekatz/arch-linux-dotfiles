@@ -77,6 +77,7 @@ dnssec-anchors
 dosfstools
 double-conversion
 downgrade
+dropbox
 dunst
 e2fsprogs
 efibootmgr
@@ -89,6 +90,7 @@ expat
 fakeroot
 ffmpeg
 ffmpegthumbnailer
+ffnvcodec-headers
 fftw
 file
 filesystem
@@ -690,6 +692,7 @@ virtualbox
 virtualbox-ext-oracle
 virtualbox-ext-vnc
 virtualbox-host-modules-arch
+vkd3d
 vmaf
 volume_key
 volumeicon
@@ -787,6 +790,7 @@ xvidcore
 xxhash
 xz
 yay
+youtube-dl
 zathura
 zathura-pdf-poppler
 zeromq

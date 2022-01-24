@@ -18,6 +18,7 @@ downgrade
 dunst
 exfat-utils
 ffmpegthumbnailer
+ffnvcodec-headers
 firewalld
 flatpak
 flex
@@ -120,6 +121,7 @@ virtualbox-ext-oracle
 virtualbox-ext-vnc
 volumeicon
 vulkan-intel
+vkd3d
 wget
 wpa_supplicant
 xarchiver
@@ -164,6 +166,7 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 yay
+youtube-dl
 zathura
 zathura-pdf-poppler
 zip

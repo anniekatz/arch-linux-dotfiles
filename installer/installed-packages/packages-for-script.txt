@@ -1,3 +1,4 @@
+adobe-source-serif-fonts
 adwaita-qt
 alsa-firmware
 alsa-plugins
@@ -9,19 +10,21 @@ appimagelauncher
 arch-audit
 auto-cpufreq
 autopep8
+blueman
+bluez
+bluez-utils
 brave-bin
 brightnessctl
 capitaine-cursors
 celluloid
+directx-headers
 dmenu
+dosfstools
 downgrade
 dunst
+efibootmgr
 exfat-utils
 ffmpegthumbnailer
-ffnvcodec-headers
-firewalld
-flatpak
-flex
 fzf
 github-desktop
 gnome-disk-utility
@@ -34,10 +37,7 @@ gtk-engine-murrine
 htop
 hwdetect
 imagemagick
-inetutils
 intel-ucode
-ipset
-iptables-nft
 isw
 kitty
 libadwaita
@@ -47,9 +47,11 @@ lightdm-gtk-greeter-settings
 lxappearance-gtk3
 lxsession-gtk3
 lxtask-gtk3
+manuskript
 mediainfo
 mesa-utils
 mpv
+mtools
 mullvad-vpn
 neofetch
 neovim
@@ -57,6 +59,8 @@ neovim-plug
 nerd-fonts-fira-code
 nerd-fonts-hack
 nerd-fonts-jetbrains-mono
+network-manager-applet
+networkmanager
 networkmanager-wireguard-git
 newsboat
 nitrogen
@@ -64,7 +68,6 @@ nvidia
 nvidia-settings
 nvidia-utils
 nwg-launchers
-openbsd-netcat
 optimus-manager
 optimus-manager-qt
 pacgraph
@@ -72,6 +75,7 @@ papirus-folders
 papirus-icon-theme
 pavucontrol
 pcmanfm-gtk3
+pdfjs
 picom-ibhagwan-git
 pipewire
 pipewire-alsa
@@ -100,10 +104,7 @@ rofi-theme-menu-1080p
 scrot
 slock
 sof-firmware
-squashfs-tools
 stacer
-sudo
-texinfo
 thermald
 timeshift
 tlp
@@ -119,9 +120,9 @@ usb_modeswitch
 virtualbox
 virtualbox-ext-oracle
 virtualbox-ext-vnc
+vkd3d
 volumeicon
 vulkan-intel
-vkd3d
 wget
 wpa_supplicant
 xarchiver
@@ -150,7 +151,6 @@ xorg-xdriinfo
 xorg-xev
 xorg-xgamma
 xorg-xhost
-xorg-xinit
 xorg-xinput
 xorg-xkbevd
 xorg-xkbutils
@@ -166,7 +166,6 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 yay
-youtube-dl
 zathura
 zathura-pdf-poppler
 zip

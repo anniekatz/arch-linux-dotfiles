@@ -42,14 +42,12 @@ cp -r ~/Dotfiles/home/.config/volumeicon ~/.config/
 cp -r ~/Dotfiles/home/.config/rofi ~/.config/
 cp -r ~/Dotfiles/home/.config/redshift ~/.config/
 cp -r ~/Dotfiles/home/.bashrc ~/
-cp -r ~/Dotfiles/home/.xinitrc ~/
 cp -r ~/Dotfiles/home/.xprofile ~/
 cp -r ~/Dotfiles/home/wallpapers ~/Pictures/
 
 chmod +x ~/.local/bin/list-keybindings
 chmod +x ~/.local/bin/newsboat-fix
 chmod +x ~/.xprofile
-chmod +x ~/.xinitrc
 chmod +x ~/.config/qtile/autostart.sh
 chmod +x ~/.config/rofi/powermenu/powermenu.sh
 chmod +x ~/.config/rofi/launchers/misc/launcher.sh

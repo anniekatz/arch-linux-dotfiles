@@ -20,9 +20,11 @@ makepkg -si
 sleep 3
 
 # Install all packages
-yay -S - < ~/Dotfiles/installer/installed-packages/packages-for-script.txt
+yay -Syu - < ~/Dotfiles/installer/installed-packages/packages-for-script.txt
 
 sleep 3
+yay -S zramd
+yay -S mullvad-vpn
 
 mkdir .local/bin
 
@@ -51,7 +53,6 @@ chmod +x ~/.xprofile
 chmod +x ~/.config/qtile/autostart.sh
 chmod +x ~/.config/rofi/powermenu/powermenu.sh
 chmod +x ~/.config/rofi/launchers/misc/launcher.sh
-chmod +x ~/.config/rofi/launchers/misc/launcher-full.sh
 chmod +x ~/.config/rofi/launchers/colorful/launcher.sh
 
 

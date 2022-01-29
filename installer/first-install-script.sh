@@ -16,8 +16,7 @@ echo root:<PASSWORD> | chpasswd
 
 pacman -S grub efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools reflector base-devel linux-headers xdg-user-dirs xdg-utils gvfs bash-completion rsync reflector acpi acpi_call acpid upower openbsd-netcat iptables-nft ipset firewalld flatpak os-prober ntfs-3g
 
-pacman -S --noconfirm xf86-video-intel
-pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
+pacman -S nvidia xf86-video-intel nvidia-settings nvidia-utils
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg

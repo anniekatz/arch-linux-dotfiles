@@ -10,9 +10,9 @@ from libqtile.config import Key, Screen, Group, Drag, Match
 from libqtile.lazy import lazy
 
 # Theme Choice
-from themes import vault
+from themes import dracula
 
-colors = vault.init_colors()
+colors = dracula.init_colors()
 
 mod = "mod4"
 mod2 = "control"
@@ -31,7 +31,7 @@ keys = [
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "shift"], "q", lazy.spawn(
-        home + '/.config/rofi/powermenu/powermenu.sh')),
+        home + '/.config/rofi/scripts/powermenu.sh')),
 
     # Apps and Launchers
     # SUPER KEY
@@ -46,7 +46,7 @@ keys = [
     Key([mod], "b",
         lazy.spawn(browser), desc="brave"),
     Key([mod], "c",
-        lazy.spawn("code"), desc="visual studio code"),
+        lazy.spawn("kitty nvim"), desc="coding/nvim"),
     Key([mod], "f",
         lazy.spawn("pcmanfm"), desc="file manager"),
     Key([mod], "h",
@@ -56,25 +56,21 @@ keys = [
     Key([mod], "w",
         lazy.spawn("qutebrowser"), desc="qutebrowser"),
     Key([mod], "d",
-        lazy.spawn(home + "/.config/rofi/launchers/colorful/launcher.sh"), desc="rofi"),
-    Key([mod], "v",
-        lazy.spawn("kitty nvim"), desc="vim"),
+        lazy.spawn(home + "/.config/rofi/scripts/floating_launcher.sh"), desc="rofi"),
     Key([mod], "m",
         lazy.spawn("mullvad-vpn"), desc="mullvad vpn"),
-    Key([mod], "p",
-        lazy.spawn("org.gimp.GIMP"), desc="picture editor GIMP"),
     Key([mod], "s",
         lazy.spawn("stacer"), desc="stacer"),
     Key([mod], "n",
-        lazy.spawn(home + "/.local/bin/newsboat-fix"), desc="newsboat"),
+        lazy.spawn(home + "/.local/bin/newsboat-fix"), desc="RSS newsboat"),
     Key([mod], "g",
-        lazy.spawn("github-desktop"), desc="github-desktop"),
+        lazy.spawn("steam"), desc="steam"),
     Key([mod], "i",
-        lazy.spawn("org.inkscape.INKSCAPE"), desc="inkscape"),
+        lazy.spawn("inkscape"), desc="inkscape"),
     Key([mod], "r",
         lazy.spawn("kitty -e ranger"), desc="ranger"),
-    Key([mod], "e",
-        lazy.spawn("subl"), desc="sublime text"),
+   Key([mod], "e",
+        lazy.spawn("manuskript"), desc="manuskript"),
     Key([mod], "z",
         lazy.spawn("notion-app-enhanced"), desc="notion"),
 
@@ -91,7 +87,7 @@ keys = [
     Key([mod1], "t",
         lazy.spawn("lxtask"), desc="task manager"),
 
-    # MULTIMEDIA/OTHER FUNCTIONS
+# MULTIMEDIA/OTHER FUNCTIONS
     # INCREASE/DECREASE BRIGHTNESS
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s +5%")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 5%-")),
@@ -114,10 +110,10 @@ keys = [
     Key([mod2], "Right", lazy.layout.right(), desc="Move focus to right"),
     Key([mod2], "Down", lazy.layout.down(), desc="Move focus down"),
     Key([mod2], "Up", lazy.layout.up(), desc="Move focus up"),
-    Key([mod2], "h", lazy.layout.left(), desc="Move focus to left"),
-    Key([mod2], "l", lazy.layout.right(), desc="Move focus to right"),
-    Key([mod2], "j", lazy.layout.down(), desc="Move focus down"),
-    Key([mod2], "k", lazy.layout.up(), desc="Move focus up"),
+#    Key([mod2], "h", lazy.layout.left(), desc="Move focus to left"),
+#    Key([mod2], "l", lazy.layout.right(), desc="Move focus to right"),
+#    Key([mod2], "j", lazy.layout.down(), desc="Move focus down"),
+#    Key([mod2], "k", lazy.layout.up(), desc="Move focus up"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
@@ -125,10 +121,10 @@ keys = [
     Key([mod2, "shift"], "Right", lazy.layout.shuffle_right()),
     Key([mod2, "shift"], "Down", lazy.layout.shuffle_down()),
     Key([mod2, "shift"], "Up", lazy.layout.shuffle_up()),
-    Key([mod2, "shift"], "h", lazy.layout.shuffle_left()),
-    Key([mod2, "shift"], "l", lazy.layout.shuffle_right()),
-    Key([mod2, "shift"], "j", lazy.layout.shuffle_down()),
-    Key([mod2, "shift"], "k", lazy.layout.shuffle_up()),
+#    Key([mod2, "shift"], "h", lazy.layout.shuffle_left()),
+#    Key([mod2, "shift"], "l", lazy.layout.shuffle_right()),
+#    Key([mod2, "shift"], "j", lazy.layout.shuffle_down()),
+#    Key([mod2, "shift"], "k", lazy.layout.shuffle_up()),
 
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
@@ -154,29 +150,6 @@ keys = [
         lazy.layout.shrink(),
         lazy.layout.increase_nmaster(),
         ),
-    Key([mod, mod2], "l",
-        lazy.layout.grow_right(),
-        lazy.layout.grow(),
-        lazy.layout.increase_ratio(),
-        lazy.layout.delete(),
-        ),
-    Key([mod, mod2], "h",
-        lazy.layout.grow_left(),
-        lazy.layout.shrink(),
-        lazy.layout.decrease_ratio(),
-        lazy.layout.add(),
-        ),
-    Key([mod, mod2], "k",
-        lazy.layout.grow_up(),
-        lazy.layout.grow(),
-        lazy.layout.decrease_nmaster(),
-        ),
-    Key([mod, mod2], "j",
-        lazy.layout.grow_down(),
-        lazy.layout.shrink(),
-        lazy.layout.increase_nmaster(),
-        ),
-
     # Layout changing
     Key([mod2], "space",
         lazy.next_layout(),
@@ -190,11 +163,11 @@ keys = [
         lazy.window.toggle_floating()),
 
     # Treetab controls
-    Key([mod2, mod1], "k",
+    Key([mod1], "Up",
         lazy.layout.section_up(),
         desc='Move up a section in treetab'
         ),
-    Key([mod2, mod1], "j",
+    Key([mod1], "Down",
         lazy.layout.section_down(),
         desc='Move down a section in treetab'
         ),
@@ -283,11 +256,11 @@ def open_pavu():
 
 
 def open_rofilauncher():
-    qtile.cmd_spawn("./.config/rofi/launchers/misc/launcher.sh")
+    qtile.cmd_spawn("./.config/rofi/scripts/applauncher.sh")
 
 
 def open_powermenu():
-    qtile.cmd_spawn("./.config/rofi/powermenu/powermenu.sh")
+    qtile.cmd_spawn("./.config/rofi/scripts/powermenu.sh")
 
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
@@ -298,12 +271,12 @@ def init_widgets_list():
         widget.Sep(
             linewidth=1,
             padding=10,
-            foreground=colors[12],
-            background=colors[12],
+            foreground=colors[13],
+            background=colors[13],
         ),
         widget.Image(
             filename="~/.config/qtile/icons/archlabs.png",
-            background=colors[12],
+            background=colors[13],
             margin_y=2,
             margin_x=7,
             mouse_callbacks={"Button1": open_rofilauncher},
@@ -311,7 +284,7 @@ def init_widgets_list():
         widget.TextBox(
             text="",
             fontsize=23,
-            background=colors[12],
+            background=colors[13],
             foreground=colors[14],
             padding=0
         ),
@@ -331,24 +304,38 @@ def init_widgets_list():
             this_screen_border=colors[1],
             other_current_screen_border=colors[1],
             other_screen_border=colors[1],
-        ),
+        ), 
         widget.TextBox(
             text="",
             fontsize=23,
-            background=colors[13],
-            foreground=colors[2],
+            background=colors[14],
+            foreground=colors[1],
             padding=0
         ),
         widget.TextBox(
             text="",
             fontsize=23,
-            background=colors[2],
+            background=colors[1],
+            foreground=colors[12],
+            padding=0
+        ),       
+        widget.TextBox(
+            text="",
+            fontsize=16,
+            background=colors[12],
+            foreground=colors[13],
+            padding=0
+        ),
+        widget.TextBox(
+            text="",
+            fontsize=16,
+            background=colors[13],
             foreground=colors[13],
             padding=0
         ),
         widget.Sep(
             linewidth=1,
-            padding=5,
+            padding=3,
             foreground=colors[13],
             background=colors[13],
         ),
@@ -421,53 +408,63 @@ def init_widgets_list():
         ),
         widget.TextBox(
             text="",
-            fontsize=16,
+            fontsize=20,
             background=colors[13],
-            foreground=colors[2],
+            foreground=colors[12],
             padding=0
         ),
         widget.TextBox(
             text="",
-            fontsize=16,
-            background=colors[2],
+            fontsize=20,
+            background=colors[12],
             foreground=colors[13],
             padding=0
         ),
-        widget.TextBox(
-            text="   ",
-            font="icomoon-feather bold",
-            fontsize=12,
-            foreground=colors[10],
-            background=colors[13],
-            padding=0
-        ),
-        widget.CPU(
-            font="Hack Nerd Font Bold",
-            fontsize=11.5,
-            foreground=colors[1],
-            background=colors[13],
-            padding_y=4,
-        ),
-        widget.Sep(
-            linewidth=1,
-            padding=7,
-            foreground=colors[13],
-            background=colors[13],
-        ),
-        widget.TextBox(
-            text="",
-            fontsize=16,
-            background=colors[13],
-            foreground=colors[2],
-            padding=0
-        ),
-        widget.TextBox(
-            text="",
-            fontsize=16,
-            background=colors[2],
-            foreground=colors[13],
-            padding=0
-        ),
+#        widget.TextBox(
+#            text="   ",
+#            font="icomoon-feather bold",
+#            fontsize=12,
+#            foreground=colors[10],
+#            background=colors[13],
+#            padding=0
+#        ),
+# CPU Widget is not working due to a psutil issue
+#        widget.CPU(
+#            font="Hack Nerd Font Bold",
+#            fontsize=11.5,
+#            foreground=colors[1],
+#            background=colors[13],
+#            padding_y=4,
+#        ),
+#        widget.Net(
+#            font="Hack Nerd Font Bold",
+#            fontsize=11.5,
+#            foreground=colors[1],
+#            background=colors[13],
+#            padding_y=4,
+#            interface="wlo1",
+#            format = 'Net:{down}↓↑{up}',
+#        ),
+#        widget.Sep(
+#            linewidth=1,
+#            padding=7,
+#            foreground=colors[13],
+#            background=colors[13],
+#        ),
+#        widget.TextBox(
+#            text="",
+#            fontsize=16,
+#            background=colors[13],
+#            foreground=colors[2],
+#            padding=0
+#        ),
+#        widget.TextBox(
+#            text="",
+#            fontsize=16,
+#            background=colors[2],
+#            foreground=colors[13],
+#            padding=0
+#        ),
         widget.Sep(
             linewidth=1,
             padding=7,
@@ -552,6 +549,7 @@ def init_widgets_list():
         widget.TextBox(
             text="⏻ ",
             foreground=colors[10],
+            background=colors[13],
             fontsize=13,
             padding=10,
             mouse_callbacks={"Button1": open_powermenu},

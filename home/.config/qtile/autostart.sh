@@ -10,7 +10,7 @@
 
 lxsession &
 nitrogen --restore &
-nm-applet &
+#nm-applet &
 optimus-manager-qt &
 picom -b --config $HOME/.config/picom/picom.conf &
-#volumeicon &
+volumeicon &

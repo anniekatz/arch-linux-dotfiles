@@ -1,13 +1,13 @@
 configuration {
     font:                           "Hack Nerd Font 12";
     show-icons:                     false;
-    icon-theme: 		    "Arc-X-D";
+    icon-theme: 		    "Papirus-Dark";
     scroll-method:                  0;
     disable-history:                false;
     sidebar-mode: 		    false;
 }
 
-@import "~/.config/rofi/powermenu/styles/arc_dark_transparent_colors.rasi"
+@import "~/.config/rofi/themes/colors/arc_dark_transparent_colors.rasi"
 
 window {
     background-color:               @background;

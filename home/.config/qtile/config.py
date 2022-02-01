@@ -1,4 +1,5 @@
-# Choose theme here
+
+
 import os
 import socket
 import subprocess
@@ -46,45 +47,32 @@ keys = [
     Key([mod], "b",
         lazy.spawn(browser), desc="brave"),
     Key([mod], "c",
-        lazy.spawn("kitty nvim"), desc="coding/nvim"),
+        lazy.spawn(terminal + " nvim"), desc="coding/nvim"),
     Key([mod], "f",
         lazy.spawn("pcmanfm"), desc="file manager"),
     Key([mod], "h",
-        lazy.spawn("kitty htop"), desc="htop"),
+        lazy.spawn(terminal + " htop"), desc="htop"),
     Key([mod], "v",
-        lazy.spawn("virtualbox"), desc="virtual box"),
+        lazy.spawn(terminal + " nvim"), desc="nvim"),
     Key([mod], "w",
         lazy.spawn("qutebrowser"), desc="qutebrowser"),
     Key([mod], "d",
         lazy.spawn(home + "/.config/rofi/scripts/floating_launcher.sh"), desc="rofi"),
     Key([mod], "m",
         lazy.spawn("mullvad-vpn"), desc="mullvad vpn"),
-    Key([mod], "s",
-        lazy.spawn("stacer"), desc="stacer"),
-    Key([mod], "n",
+    Key([mod], "r",
         lazy.spawn(home + "/.local/bin/newsboat-fix"), desc="RSS newsboat"),
     Key([mod], "g",
         lazy.spawn("steam"), desc="steam"),
     Key([mod], "i",
         lazy.spawn("inkscape"), desc="inkscape"),
-    Key([mod], "r",
-        lazy.spawn("kitty -e ranger"), desc="ranger"),
-   Key([mod], "e",
-        lazy.spawn("manuskript"), desc="manuskript"),
+    Key([mod], "s",
+        lazy.spawn("wine C:/'Program Files'/Scrivener3/Scrivener"), desc="scrivener"),
     Key([mod], "z",
         lazy.spawn("notion-app-enhanced"), desc="notion"),
-
-    # SETTINGS KEYS
-    # ALT KEY
-    Key([mod1], "w",
-        lazy.spawn("nitrogen"), desc="wallpaper"),
-    Key([mod1], "g",
-        lazy.spawn("lxappearance"), desc="gtk settings"),
-    Key([mod1], "k",
-        lazy.spawn("kvantummanager"), desc="kvantum"),
-    Key([mod1], "q",
-        lazy.spawn("qt5ct"), desc="qt5 settings"),
-    Key([mod1], "t",
+    Key([mod, "shift"], "s",
+        lazy.spawn("stacer"), desc="stacer"),
+    Key([mod, "shift"], "t",
         lazy.spawn("lxtask"), desc="task manager"),
 
 # MULTIMEDIA/OTHER FUNCTIONS
@@ -98,9 +86,9 @@ keys = [
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -q sset Master 5%+")),
 
     # Print Screen
-    Key([mod], "F12", lazy.spawn(
+    Key([mod1, "shift"], "F12", lazy.spawn(
         "scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
-    Key([mod, "shift"], "s", lazy.spawn(
+    Key([mod1, "shift"], "s", lazy.spawn(
         "scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
 
     # QTILE KEYS

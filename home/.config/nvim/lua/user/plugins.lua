@@ -46,33 +46,36 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
-  use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
-  use "nvim-lualine/lualine.nvim"
-  use "akinsho/toggleterm.nvim"
-  use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
-  use "goolord/alpha-nvim"
-  use "ap/vim-css-color"  
-  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-  use "folke/which-key.nvim"
+  use "kyazdani42/nvim-web-devicons" -- Provides icons
+  use "kyazdani42/nvim-tree.lua" -- File explorer for neovim
+  use "akinsho/bufferline.nvim" -- Aesthetic bufferline
+  use "moll/vim-bbye" -- Delete buffers without closing windows
+  use "nvim-lualine/lualine.nvim" -- Lua statusline at bottom
+  use "akinsho/toggleterm.nvim" -- Persist and toggle multiple terminals while editing
+  use "ahmedkhalf/project.nvim" -- Project Management
+  use "lewis6991/impatient.nvim" -- Improve startup time for Neovim
+  use "lukas-reineke/indent-blankline.nvim" -- Can add indentation lines
+  use "goolord/alpha-nvim" -- Nvim Greeter
+  use "ap/vim-css-color" -- Preview HEX colors
+  use "antoinemadec/FixCursorHold.nvim" -- Fix lsp doc highlight
+  use "folke/which-key.nvim" -- Popup that shows possible key combinations
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
   use "dracula/vim"
+  use "morhetz/gruvbox"
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lsp" -- LSP completions
+  use "hrsh7th/cmp-nvim-lua" -- Lua completions
+  use "nvim-orgmode/orgmode" --orgmode-like completion
 
-  -- snippets
+  -- Snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
@@ -83,17 +86,20 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- Telescope
-  use "nvim-telescope/telescope.nvim"
+  use "nvim-telescope/telescope.nvim" --fuzzy file finding + more
+  use "nvim-telescope/telescope-media-files.nvim" -- view media files in telescope
 
   -- Treesitter
   use {
-    "nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter", -- better syntax highlighting
     run = ":TSUpdate",
-  }
-  use "JoosepAlviste/nvim-ts-context-commentstring"
+    "p00f/nvim-ts-rainbow", -- rainbow bracket colorizing
+    }
+
+  use "JoosepAlviste/nvim-ts-context-commentstring" -- gcc command is context-aware
 
   -- Git
-  use "lewis6991/gitsigns.nvim"
+  use "lewis6991/gitsigns.nvim" -- git symbols + commands
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

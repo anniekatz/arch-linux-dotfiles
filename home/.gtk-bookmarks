@@ -1,0 +1,7 @@
+file:/// /
+file:///etc /etc
+file:///usr /usr
+file:///home/annie ~
+file:///home/annie/.config ~/.config
+file:///home/annie/Documents ~/Documents
+file:///home/annie/Downloads ~/Downloads

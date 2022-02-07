@@ -32,8 +32,8 @@ keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<A-S-n>", ":bnext<CR>", opts)
-keymap("n", "<A-S-p>", ":bprevious<CR>", opts)
+keymap("n", "<A-n>", ":bnext<CR>", opts)
+keymap("n", "<A-p>", ":bprevious<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-S-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -61,8 +61,11 @@ keymap("x", "<A-J>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-K>", ":move '<-2<CR>gv-gv", opts)
 
 -- Telescope --
-keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<leader>lg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<leader>F", "<cmd>Telescope live_grep<cr>", opts)
+
+-- Formatting --
+keymap("n", "<leader>N", ":Format<cr>", opts)
 
 -- Terminal --
 -- Better terminal navigation

@@ -1,5 +1,3 @@
-
-
 import os
 import socket
 import subprocess
@@ -18,8 +16,8 @@ colors = dracula.init_colors()
 mod = "mod4"
 mod2 = "control"
 mod1 = "mod1"
-home = os.path.expanduser('~')
-folder = os.path.expanduser('~/.config/qtile')
+home = os.path.expanduser("~")
+folder = os.path.expanduser("~/.config/qtile")
 
 today = datetime.today()
 terminal = "kitty"
@@ -27,93 +25,86 @@ browser = "brave"
 
 keys = [
 
-    # POWER KEYS
-
+# POWER KEYS
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.restart(), desc="Restart Qtile"),
-    Key([mod, "shift"], "q", lazy.spawn(
-        home + '/.config/rofi/scripts/powermenu.sh')),
+    Key([mod, "shift"], "q", lazy.spawn(home + "/.config/rofi/scripts/powermenu.sh")),
 
-    # Apps and Launchers
-    # SUPER KEY
-    Key([mod], "space",
+# APPS AND LAUNCHERS
+# SUPER KEY
+    Key([mod], "space", 
         lazy.spawn("nwggrid -p -o 0.5"), desc="launcher"),
-    Key([mod, "shift"], "d",
-        lazy.spawn("dmenu_run"), desc="dmenu"),
-    Key([mod], "t",
+    Key([mod, "shift"], 
+        "d", lazy.spawn("dmenu_run"), desc="dmenu"),
+    Key([mod], "t", 
         lazy.spawn("timeshift-launcher"), desc="timeshift"),
-    Key([mod], "Return",
+    Key([mod], "Return", 
         lazy.spawn(terminal), desc="kitty"),
-    Key([mod], "b",
+    Key([mod], "b", 
         lazy.spawn(browser), desc="brave"),
-    Key([mod], "c",
+    Key([mod], "c", 
         lazy.spawn(terminal + " nvim"), desc="coding/nvim"),
-    Key([mod], "f",
+    Key([mod], "f", 
         lazy.spawn("pcmanfm"), desc="file manager"),
-    Key([mod], "h",
+    Key([mod], "h", 
         lazy.spawn(terminal + " htop"), desc="htop"),
-    Key([mod], "v",
+    Key([mod], "v", 
         lazy.spawn(terminal + " nvim"), desc="nvim"),
-    Key([mod], "w",
+    Key([mod], "w", 
         lazy.spawn("qutebrowser"), desc="qutebrowser"),
     Key([mod], "d",
         lazy.spawn(home + "/.config/rofi/scripts/floating_launcher.sh"), desc="rofi"),
-    Key([mod], "m",
+    Key([mod], "m", 
         lazy.spawn("mullvad-vpn"), desc="mullvad vpn"),
-    Key([mod], "r",
+    Key([mod], "r", 
         lazy.spawn(home + "/.local/bin/newsboat-fix"), desc="RSS newsboat"),
-    Key([mod], "g",
+    Key([mod], "g", 
         lazy.spawn("steam"), desc="steam"),
-    Key([mod], "i",
+    Key([mod], "i", 
         lazy.spawn("inkscape"), desc="inkscape"),
     Key([mod], "s",
         lazy.spawn("wine C:/'Program Files'/Scrivener3/Scrivener"), desc="scrivener"),
-    Key([mod], "z",
+    Key([mod], "n", 
         lazy.spawn("notion-app-enhanced"), desc="notion"),
-    Key([mod, "shift"], "s",
-        lazy.spawn("stacer"), desc="stacer"),
-    Key([mod, "shift"], "t",
-        lazy.spawn("lxtask"), desc="task manager"),
+    Key([mod, "shift"], 
+        "s", lazy.spawn("stacer"), desc="stacer"),
+    Key([mod, "shift"], 
+        "t", lazy.spawn("lxtask"), desc="task manager"),
 
 # MULTIMEDIA/OTHER FUNCTIONS
+    
     # INCREASE/DECREASE BRIGHTNESS
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s +5%")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 5%-")),
-
+    
     # INCREASE/DECREASE/MUTE VOLUME
     Key([], "XF86AudioMute", lazy.spawn("amixer -q sset Master toggle")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -q sset Master 5%-")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -q sset Master 5%+")),
-
+    
     # Print Screen
-    Key([mod1, "shift"], "F12", lazy.spawn(
-        "scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
-    Key([mod1, "shift"], "s", lazy.spawn(
-        "scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
+    Key(
+        [mod1, "shift"], "F12",
+        lazy.spawn("scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
+    Key(
+        [mod1, "shift"], "s",
+        lazy.spawn("scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
 
-    # QTILE KEYS
-    # MOD KEYS
+# QTILE KEYS
+# CTRL 
     # Switch between windows
     Key([mod2], "Left", lazy.layout.left(), desc="Move focus to left"),
     Key([mod2], "Right", lazy.layout.right(), desc="Move focus to right"),
     Key([mod2], "Down", lazy.layout.down(), desc="Move focus down"),
     Key([mod2], "Up", lazy.layout.up(), desc="Move focus up"),
-#    Key([mod2], "h", lazy.layout.left(), desc="Move focus to left"),
-#    Key([mod2], "l", lazy.layout.right(), desc="Move focus to right"),
-#    Key([mod2], "j", lazy.layout.down(), desc="Move focus down"),
-#    Key([mod2], "k", lazy.layout.up(), desc="Move focus up"),
-
+   
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key([mod2, "shift"], "Left", lazy.layout.shuffle_left()),
     Key([mod2, "shift"], "Right", lazy.layout.shuffle_right()),
     Key([mod2, "shift"], "Down", lazy.layout.shuffle_down()),
     Key([mod2, "shift"], "Up", lazy.layout.shuffle_up()),
-#    Key([mod2, "shift"], "h", lazy.layout.shuffle_left()),
-#    Key([mod2, "shift"], "l", lazy.layout.shuffle_right()),
-#    Key([mod2, "shift"], "j", lazy.layout.shuffle_down()),
-#    Key([mod2, "shift"], "k", lazy.layout.shuffle_up()),
-
+    
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
     Key([mod, mod2], "Right",
@@ -121,54 +112,53 @@ keys = [
         lazy.layout.grow(),
         lazy.layout.increase_ratio(),
         lazy.layout.delete(),
-        ),
+    ),
     Key([mod, mod2], "Left",
         lazy.layout.grow_left(),
         lazy.layout.shrink(),
         lazy.layout.decrease_ratio(),
         lazy.layout.add(),
-        ),
+    ),
     Key([mod, mod2], "Up",
         lazy.layout.grow_up(),
         lazy.layout.grow(),
         lazy.layout.decrease_nmaster(),
-        ),
+    ),
     Key([mod, mod2], "Down",
         lazy.layout.grow_down(),
         lazy.layout.shrink(),
         lazy.layout.increase_nmaster(),
-        ),
+    ),
+
     # Layout changing
-    Key([mod2], "space",
-        lazy.next_layout(),
-        desc="Toggle between layouts"),
-    Key([mod2], "n",
-        lazy.layout.normalize(),
-        desc="Reset all window sizes"),
-    Key([mod2], "m",
-        lazy.window.toggle_fullscreen()),
-    Key([mod2, "shift"], "f",
-        lazy.window.toggle_floating()),
-
+    Key([mod2], "space", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod2, "shift"], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod2, "shift"], "m", lazy.window.toggle_fullscreen()),
+    Key([mod2, "shift"], "f", lazy.window.toggle_floating()),
+    
     # Treetab controls
-    Key([mod1], "Up",
+    Key(
+        [mod2, mod1],
+        "Up",
         lazy.layout.section_up(),
-        desc='Move up a section in treetab'
-        ),
-    Key([mod1], "Down",
+        desc="Move up a section in treetab",
+    ),
+    Key(
+        [mod2, mod1],
+        "Down",
         lazy.layout.section_down(),
-        desc='Move down a section in treetab'
-        ),
-
+        desc="Move down a section in treetab",
+    ),
 ]
 
 
 def init_layout_theme():
-    return {"border_width": 2,
-            "margin": 12,
-            "border_focus": colors[8],
-            "border_normal": colors[13],
-            }
+    return {
+        "border_width": 2,
+        "margin": 12,
+        "border_focus": colors[8],
+        "border_normal": colors[13],
+    }
 
 
 layout_theme = init_layout_theme()
@@ -196,17 +186,29 @@ layouts = [
         section_bottom=20,
         level_shift=8,
         vspace=2,
-        panel_width=210
+        panel_width=210,
     ),
-    layout.Floating(**layout_theme, fullscreen_border_width=3,
-                    max_border_width=3),
+    layout.Floating(**layout_theme, fullscreen_border_width=3, max_border_width=3),
 ]
 
 groups = []
 group_names = ["1", "2", "3", "4", "5", "6"]
-group_labels = ["", "", "", "", "", "", ]
-group_layouts = ["floating", "monadtall",
-                 "monadtall", "monadtall", "monadtall", "floating"]
+group_labels = [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+]
+group_layouts = [
+    "floating",
+    "monadtall",
+    "monadtall",
+    "monadtall",
+    "monadtall",
+    "floating",
+]
 
 for i in range(len(group_names)):
     groups.append(
@@ -214,18 +216,24 @@ for i in range(len(group_names)):
             name=group_names[i],
             layout=group_layouts[i].lower(),
             label=group_labels[i],
-        ))
+        )
+    )
 
 for i in groups:
-    keys.extend({
-
-        # CHANGE WORKSPACES
-        Key([mod], i.name, lazy.group[i.name].toscreen()),
-        Key([mod], "Right", lazy.screen.next_group()),
-        Key([mod], "Left", lazy.screen.prev_group()),
-        Key([mod, "shift"], i.name, lazy.window.togroup(
-            i.name), lazy.group[i.name].toscreen()),
-    })
+    keys.extend(
+        {
+            # CHANGE WORKSPACES
+            Key([mod], i.name, lazy.group[i.name].toscreen()),
+            Key([mod], "Right", lazy.screen.next_group()),
+            Key([mod], "Left", lazy.screen.prev_group()),
+            Key(
+                [mod, "shift"],
+                i.name,
+                lazy.window.togroup(i.name),
+                lazy.group[i.name].toscreen(),
+            ),
+        }
+    )
 
 
 def init_widgets_defaults():
@@ -250,9 +258,11 @@ def open_rofilauncher():
 def open_powermenu():
     qtile.cmd_spawn("./.config/rofi/scripts/powermenu.sh")
 
+
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 # Widgets on the bar
+
 
 def init_widgets_list():
     widgets_list = [
@@ -274,7 +284,7 @@ def init_widgets_list():
             fontsize=23,
             background=colors[13],
             foreground=colors[14],
-            padding=0
+            padding=0,
         ),
         widget.GroupBox(
             bg=colors[12],
@@ -292,34 +302,34 @@ def init_widgets_list():
             this_screen_border=colors[1],
             other_current_screen_border=colors[1],
             other_screen_border=colors[1],
-        ), 
+        ),
         widget.TextBox(
             text="",
             fontsize=23,
             background=colors[14],
             foreground=colors[1],
-            padding=0
+            padding=0,
         ),
         widget.TextBox(
             text="",
             fontsize=23,
             background=colors[1],
             foreground=colors[12],
-            padding=0
-        ),       
+            padding=0,
+        ),
         widget.TextBox(
             text="",
             fontsize=16,
             background=colors[12],
             foreground=colors[13],
-            padding=0
+            padding=0,
         ),
         widget.TextBox(
             text="",
             fontsize=16,
             background=colors[13],
             foreground=colors[13],
-            padding=0
+            padding=0,
         ),
         widget.Sep(
             linewidth=1,
@@ -335,12 +345,12 @@ def init_widgets_list():
             scale=0.8,
         ),
         widget.TaskList(
-            font='Hack Nerd Font',
+            font="Hack Nerd Font",
             fontsize=13,
             padding=3,
             margin_x=5,
             margin_y=3,
-            highlight_method='block',
+            highlight_method="block",
             foreground=colors[0],
             border=colors[2],
             background=colors[13],
@@ -355,28 +365,28 @@ def init_widgets_list():
             fontsize=23,
             background=colors[13],
             foreground=colors[12],
-            padding=0
+            padding=0,
         ),
         widget.TextBox(
             text="",
             fontsize=23,
             background=colors[12],
             foreground=colors[1],
-            padding=0
+            padding=0,
         ),
         widget.TextBox(
             text="",
             fontsize=23,
             background=colors[1],
             foreground=colors[12],
-            padding=0
+            padding=0,
         ),
         widget.TextBox(
             text="",
             fontsize=23,
             background=colors[12],
             foreground=colors[13],
-            padding=0
+            padding=0,
         ),
         widget.TextBox(
             text="  ",
@@ -391,7 +401,7 @@ def init_widgets_list():
             fontsize=11.5,
             background=colors[13],
             foreground=colors[1],
-            format='{MemUsed: .0f} MB ',
+            format="{MemUsed: .0f} MB ",
             padding_y=4,
         ),
         widget.TextBox(
@@ -399,60 +409,60 @@ def init_widgets_list():
             fontsize=20,
             background=colors[13],
             foreground=colors[12],
-            padding=0
+            padding=0,
         ),
         widget.TextBox(
             text="",
             fontsize=20,
             background=colors[12],
             foreground=colors[13],
-            padding=0
+            padding=0,
         ),
-#        widget.TextBox(
-#            text="   ",
-#            font="icomoon-feather bold",
-#            fontsize=12,
-#            foreground=colors[10],
-#            background=colors[13],
-#            padding=0
-#        ),
-# CPU Widget is not working due to a psutil issue
-#        widget.CPU(
-#            font="Hack Nerd Font Bold",
-#            fontsize=11.5,
-#            foreground=colors[1],
-#            background=colors[13],
-#            padding_y=4,
-#        ),
-#        widget.Net(
-#            font="Hack Nerd Font Bold",
-#            fontsize=11.5,
-#            foreground=colors[1],
-#            background=colors[13],
-#            padding_y=4,
-#            interface="wlo1",
-#            format = 'Net:{down}↓↑{up}',
-#        ),
-#        widget.Sep(
-#            linewidth=1,
-#            padding=7,
-#            foreground=colors[13],
-#            background=colors[13],
-#        ),
-#        widget.TextBox(
-#            text="",
-#            fontsize=16,
-#            background=colors[13],
-#            foreground=colors[2],
-#            padding=0
-#        ),
-#        widget.TextBox(
-#            text="",
-#            fontsize=16,
-#            background=colors[2],
-#            foreground=colors[13],
-#            padding=0
-#        ),
+        #        widget.TextBox(
+        #            text="   ",
+        #            font="icomoon-feather bold",
+        #            fontsize=12,
+        #            foreground=colors[10],
+        #            background=colors[13],
+        #            padding=0
+        #        ),
+        # CPU Widget is not working due to a psutil issue
+        #        widget.CPU(
+        #            font="Hack Nerd Font Bold",
+        #            fontsize=11.5,
+        #            foreground=colors[1],
+        #            background=colors[13],
+        #            padding_y=4,
+        #        ),
+        #        widget.Net(
+        #            font="Hack Nerd Font Bold",
+        #            fontsize=11.5,
+        #            foreground=colors[1],
+        #            background=colors[13],
+        #            padding_y=4,
+        #            interface="wlo1",
+        #            format = 'Net:{down}↓↑{up}',
+        #        ),
+        #        widget.Sep(
+        #            linewidth=1,
+        #            padding=7,
+        #            foreground=colors[13],
+        #            background=colors[13],
+        #        ),
+        #        widget.TextBox(
+        #            text="",
+        #            fontsize=16,
+        #            background=colors[13],
+        #            foreground=colors[2],
+        #            padding=0
+        #        ),
+        #        widget.TextBox(
+        #            text="",
+        #            fontsize=16,
+        #            background=colors[2],
+        #            foreground=colors[13],
+        #            padding=0
+        #        ),
         widget.Sep(
             linewidth=1,
             padding=7,
@@ -460,7 +470,7 @@ def init_widgets_list():
             background=colors[13],
         ),
         widget.Battery(
-            format='{percent:2.0%}',
+            format="{percent:2.0%}",
             update_interval=60,
             show_short_text=False,
             background=colors[13],
@@ -475,14 +485,14 @@ def init_widgets_list():
             fontsize=12,
             background=colors[13],
             foreground=colors[13],
-            padding=0
+            padding=0,
         ),
         widget.TextBox(
             text="",
             fontsize=23,
             background=colors[13],
             foreground=colors[12],
-            padding=0
+            padding=0,
         ),
         widget.TextBox(
             text=today.strftime(" %A, %B %d, %Y "),
@@ -490,21 +500,21 @@ def init_widgets_list():
             fontsize=12.5,
             background=colors[12],
             foreground=colors[0],
-            padding=4
+            padding=4,
         ),
         widget.TextBox(
             text="",
             fontsize=23,
             background=colors[12],
             foreground=colors[1],
-            padding=0
+            padding=0,
         ),
         widget.TextBox(
             text="",
             fontsize=23,
             background=colors[1],
             foreground=colors[12],
-            padding=0
+            padding=0,
         ),
         widget.TextBox(
             text="  ",
@@ -525,14 +535,14 @@ def init_widgets_list():
             fontsize=12,
             background=colors[12],
             foreground=colors[12],
-            padding=0
+            padding=0,
         ),
         widget.TextBox(
             text="",
             fontsize=23,
             background=colors[12],
             foreground=colors[13],
-            padding=0
+            padding=0,
         ),
         widget.TextBox(
             text="⏻ ",
@@ -564,18 +574,25 @@ widgets_screen2 = init_widgets_screen2()
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26, opacity=1)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26, opacity=1))]
+    return [
+        Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26, opacity=1)),
+        Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26, opacity=1)),
+    ]
 
 
 screens = init_screens()
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
-         start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
-         start=lazy.window.get_size()),
+    Drag(
+        [mod],
+        "Button1",
+        lazy.window.set_position_floating(),
+        start=lazy.window.get_position(),
+    ),
+    Drag(
+        [mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
+    ),
 ]
 
 dgroups_key_binder = None
@@ -586,19 +603,21 @@ main = None
 
 @hook.subscribe.startup_once
 def start_once():
-    subprocess.call([home + '/.config/qtile/autostart.sh'])
+    subprocess.call([home + "/.config/qtile/autostart.sh"])
 
 
 @hook.subscribe.startup
 def start_always():
     # Set the cursor to something sane in X
-    subprocess.Popen(['xsetroot', '-cursor_name', 'left_ptr'])
+    subprocess.Popen(["xsetroot", "-cursor_name", "left_ptr"])
 
 
 @hook.subscribe.client_new
 def set_floating(window):
-    if (window.window.get_wm_transient_for()
-            or window.window.get_wm_type() in floating_types):
+    if (
+        window.window.get_wm_transient_for()
+        or window.window.get_wm_type() in floating_types
+    ):
         window.floating = True
 
 
@@ -606,20 +625,22 @@ floating_types = ["notification", "toolbar", "splash", "dialog"]
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(float_rules=[
-    # Run the utility of `xprop` to see the wm class and name of an X client.
-    *layout.Floating.default_float_rules,
-    Match(wm_class='confirmreset'),  # gitk
-    Match(wm_class='makebranch'),  # gitk
-    Match(wm_class='maketag'),  # gitk
-    Match(wm_class='ssh-askpass'),  # ssh-askpass
-    Match(title='branchdialog'),  # gitk
-    Match(title='pinentry'),
-    Match(wm_class='dialog'),
-    Match(wm_class='download'),
-    # Match(wm_class='steam'),
-    Match(wm_class='error'),  # GPG key password entry
-])
+floating_layout = layout.Floating(
+    float_rules=[
+        # Run the utility of `xprop` to see the wm class and name of an X client.
+        *layout.Floating.default_float_rules,
+        Match(wm_class="confirmreset"),  # gitk
+        Match(wm_class="makebranch"),  # gitk
+        Match(wm_class="maketag"),  # gitk
+        Match(wm_class="ssh-askpass"),  # ssh-askpass
+        Match(title="branchdialog"),  # gitk
+        Match(title="pinentry"),
+        Match(wm_class="dialog"),
+        Match(wm_class="download"),
+        # Match(wm_class='steam'),
+        Match(wm_class="error"),  # GPG key password entry
+    ]
+)
 
 auto_fullscreen = True
 focus_on_window_activation = "smart"

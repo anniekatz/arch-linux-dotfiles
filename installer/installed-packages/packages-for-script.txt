@@ -1,4 +1,5 @@
 adwaita-qt
+aic94xx-firmware
 alsa-firmware
 alsa-plugins
 alsa-tools
@@ -14,11 +15,11 @@ bluez
 bluez-utils
 brave-bin
 brightnessctl
+calibre
 capitaine-cursors
 celluloid
 directx-headers
 dmenu
-dosfstools
 downgrade
 dunst
 efibootmgr
@@ -30,6 +31,7 @@ gnome-disk-utility
 gpicview
 gst-libav
 gst-plugin-pipewire
+gst-plugins-bad
 gst-plugins-base
 gst-plugins-good
 gtk-engine-murrine
@@ -46,7 +48,6 @@ lightdm-gtk-greeter-settings
 lxappearance-gtk3
 lxsession-gtk3
 lxtask-gtk3
-manuskript
 mediainfo
 mesa-utils
 mpv
@@ -60,6 +61,7 @@ networkmanager
 networkmanager-wireguard-git
 newsboat
 nitrogen
+nss-mdns
 nvidia
 nvidia-settings
 nvidia-utils
@@ -84,11 +86,13 @@ python-dbus-next
 python-extras
 python-iwlib
 python-keyring
+python-markdown
 python-notify2
 python-pip
 python-pyalsa
 python-pyqt5
 python-pyxdg
+python-setproctitle
 qt5ct
 qtile
 qutebrowser
@@ -103,6 +107,7 @@ sof-firmware
 stacer
 thermald
 timeshift
+tk
 tlp
 tmux
 ttf-anonymous-pro
@@ -110,15 +115,18 @@ ttf-icomoon-feather
 ttf-joypixels
 ttf-ms-fonts
 ttf-roboto-mono
+ttf-windows
 tumbler
 unrar
+upd72020x-fw
 usb_modeswitch
 virtualbox
 virtualbox-ext-oracle
 virtualbox-ext-vnc
 vkd3d
 volumeicon
-vulkan-intel
+vulkan-devel
+wd719x-firmware
 wget
 wpa_supplicant
 xarchiver
@@ -127,7 +135,9 @@ xdotool
 xf86-video-intel
 xorg
 xorg-server-devel
+xorg-xmessage
 yay
 zathura
 zathura-pdf-poppler
 zip
+zramd

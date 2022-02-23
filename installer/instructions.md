@@ -59,12 +59,13 @@
 
 12. Clone Dotfiles repo
 	
-	> git clone https://github.com/anniekatz/Dotfiles 
+	> git clone https://github.com/anniekatz/LinuxDesktopDotfiles 
 
 13. Run base install script
 	* Edit script first with neovim to include chosen username, passwords, hostname, etc.
-	* Run script
-	
+	* Change name of folder for easy typing and run script
+	    > mv ./LinuxDesktopDotfiles ./Dotfiles
+
 		> chmod +x ./Dotfiles/installer/first-install-script.sh
 	
 		> ./Dotfiles/installer/first-install-script.sh
@@ -109,7 +110,8 @@
 	> sudo nvim /etc/default/grub
 	
 	* Edit file to include module "ec_sys.write_support=1" in GRUB_CMDLINE_LINUX_DEFAULT line and add the line GRUB_DISABLE_OS_PROBER=false
-	
+    * There is also a grub file you can copy over in Dotfiles/root/etc/default you can copy over
+
 	> sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 22. Generate new initramfs

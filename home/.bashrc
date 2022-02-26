@@ -8,9 +8,12 @@
 alias ls='ls --color=auto'
 alias vim='nvim'
 alias sudo='sudo '
+alias upd='yay -Syu && sudo flatpak update && sudo flatpak upgrade'
+alias mkinit='sudo mkinitcpio -p linux'
+alias grupd='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 #PS1='[\u@\h \W]\$ '
-PS1="\e[0;32m[\u@\h \W]\$ \e[m "
+PS1="\e[0;35m[\u@\h \W]\$ \e[m "
 
 neofetch
 

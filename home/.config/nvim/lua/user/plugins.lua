@@ -73,7 +73,6 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp" -- LSP completions
   use "hrsh7th/cmp-nvim-lua" -- Lua completions
-  use "nvim-orgmode/orgmode" --orgmode-like completion
 
   -- Snippets
   use "L3MON4D3/LuaSnip" --snippet engine

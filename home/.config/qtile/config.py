@@ -9,9 +9,13 @@ from libqtile.config import Key, Screen, Group, Drag, Match
 from libqtile.lazy import lazy
 
 # Theme Choice
-from themes import dracula
 
-colors = dracula.init_colors()
+#from themes import dracula
+#colors = dracula.init_colors()
+
+from themes import vault
+colors = vault.init_colors()
+
 
 mod = "mod4"
 mod2 = "control"

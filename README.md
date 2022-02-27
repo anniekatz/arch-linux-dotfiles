@@ -15,7 +15,6 @@ Current Themes:
 	* Nvim Theme: Gruvbox
 	* Kitty Theme: Vault
 	* Qtile Theme: Vault
-	*
 
 * Dracula
  	* GTK/Kvantum/QT5CT Theme: Ant-Dracula (in installed packages)
@@ -36,11 +35,8 @@ Current Themes:
 	* Qtile Theme: Dracula
 
 ## Changing theme
+	* See change-theme-instructions.md
 
-* Qtile themes can be changed in .config/qtile/config.py
-* Nvim themes can be changed in .config/nvim/init.vim
-* Kitty themes can be changed in .config/kitty/kitty.conf
-* Corresponding wallpapers found in home/wallpapers
 
 ## To Do
 

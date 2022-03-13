@@ -9,7 +9,6 @@ from libqtile.config import Key, Screen, Group, Drag, Match
 from libqtile.lazy import lazy
 
 # Theme Choice
-
 #from themes import dracula
 #colors = dracula.init_colors()
 
@@ -567,22 +566,13 @@ def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
     return widgets_screen1
 
-
-def init_widgets_screen2():
-    widgets_screen2 = init_widgets_list()
-    return widgets_screen2
-
-
 widgets_screen1 = init_widgets_screen1()
-widgets_screen2 = init_widgets_screen2()
 
 
 def init_screens():
     return [
         Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26, opacity=1)),
-        Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26, opacity=1)),
     ]
-
 
 screens = init_screens()
 

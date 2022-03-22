@@ -58,7 +58,7 @@ nerd-fonts-hack
 nerd-fonts-jetbrains-mono
 network-manager-applet
 networkmanager
-networkmanager-wireguard-git
+wireguard-tools
 newsboat
 nitrogen
 nss-mdns

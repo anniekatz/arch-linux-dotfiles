@@ -559,15 +559,9 @@ def init_widgets_list():
     return widgets_list
 
 
-widgets_list = init_widgets_list()
-
-
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
     return widgets_screen1
-
-widgets_screen1 = init_widgets_screen1()
-
 
 def init_screens():
     return [

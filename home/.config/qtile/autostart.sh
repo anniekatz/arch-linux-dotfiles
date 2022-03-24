@@ -13,4 +13,4 @@ nitrogen --restore &
 #nm-applet &
 optimus-manager-qt &
 picom -b --config $HOME/.config/picom/picom.conf &
-volumeicon &
+#volumeicon &

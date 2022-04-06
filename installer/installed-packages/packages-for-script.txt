@@ -90,6 +90,7 @@ python-markdown
 python-notify2
 python-pip
 python-pyalsa
+python-pygments
 python-pyqt5
 python-pyxdg
 python-setproctitle

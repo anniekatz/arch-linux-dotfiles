@@ -1,6 +1,5 @@
 "query:Tech News:tags # \"tech\""
 https://hnrss.org/frontpage "~· YCombinator FP" "tech"
-https://news.ycombinator.com/rss "~· YCombinator" "tech"
 https://feeds.feedburner.com/TechCrunch/ "~· TechCrunch" "tech"
 
 "query:Linux GNUs:tags # \"linux\""
@@ -11,7 +10,7 @@ https://lukesmith.xyz/rss.xml "~· Luke Smith (Blog)" "blogs"
 https://languagelog.ldc.upenn.edu/nll/?feed=rss2 "~· Language Log" "blogs"
 https://xkcd.com/atom.xml "~· XKCD" "blogs"
 https://based.cooking/rss.xml "~· Based Cooking" "blogs"
-
+https://lukesmith.xyz/lindy.xml "~· LindyPress" "blogs"
 
 "query:Podcasts:tags # \"podcasts\""
 https://www.patreon.com/rss/newmodels?auth=Wl1PoBFWYTSOIqu78sg6KN_53IeBlOUE "~· New Models" "podcasts"
@@ -33,6 +32,9 @@ http://feeds.marketwatch.com/marketwatch/topstories/ "~· MarketWatch News"
 "query:Boring News:tags # \"news\""
 https://rss.nytimes.com/services/xml/rss/nyt/World.xml "~· New York Times" "news"
 https://feeds.bbci.co.uk/news/rss.xml?edition=us "~· BBC News - US"
+https://greenwald.substack.com/feed "~· Greenwald Substack"
+https://taibbi.substack.com/ "~· Taibbi Substack"
+
 
 "query:Reddit:tags # \"reddit\""
 https://www.reddit.com/r/linux/.rss "~· r/linux" "reddit"

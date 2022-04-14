@@ -48,10 +48,8 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons" -- Provides icons
   use "kyazdani42/nvim-tree.lua" -- File explorer for neovim
-  use "akinsho/bufferline.nvim" -- Aesthetic bufferline
   use "moll/vim-bbye" -- Delete buffers without closing windows
   use "nvim-lualine/lualine.nvim" -- Lua statusline at bottom
-  use "akinsho/toggleterm.nvim" -- Persist and toggle multiple terminals while editing
   use "ahmedkhalf/project.nvim" -- Project Management
   use "lewis6991/impatient.nvim" -- Improve startup time for Neovim
   use "lukas-reineke/indent-blankline.nvim" -- Can add indentation lines

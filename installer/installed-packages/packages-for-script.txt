@@ -1,4 +1,4 @@
-adwaita-qt
+adwaita-qt5
 aic94xx-firmware
 alsa-firmware
 alsa-plugins
@@ -10,7 +10,6 @@ appimagelauncher
 arch-audit
 auto-cpufreq
 autopep8
-blueman
 bluez
 bluez-utils
 brave-bin
@@ -34,7 +33,9 @@ gst-plugin-pipewire
 gst-plugins-bad
 gst-plugins-base
 gst-plugins-good
+gst-plugins-ugly
 gtk-engine-murrine
+gtk-engines
 htop
 hwdetect
 imagemagick
@@ -42,6 +43,7 @@ intel-ucode
 isw
 kitty
 libadwaita
+libxss
 lightdm
 lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
@@ -69,7 +71,6 @@ nwg-launchers
 optimus-manager
 optimus-manager-qt
 pacgraph
-papirus-folders
 papirus-icon-theme
 pavucontrol
 pcmanfm-gtk3
@@ -102,6 +103,7 @@ rebuild-detector
 redshift
 rofi
 rofi-theme-menu-1080p
+rustup
 scrot
 slock
 sof-firmware
@@ -113,6 +115,7 @@ tlp
 tmux
 ttf-anonymous-pro
 ttf-icomoon-feather
+ttf-iosevka-term
 ttf-joypixels
 ttf-ms-fonts
 ttf-roboto-mono
@@ -137,8 +140,6 @@ xf86-video-intel
 xorg
 xorg-server-devel
 xorg-xmessage
-yay
 zathura
 zathura-pdf-poppler
 zip
-zramd

@@ -70,7 +70,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp" -- LSP completions
-  use "hrsh7th/cmp-nvim-lua" -- Lua completions
 
   -- Snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -90,7 +89,6 @@ return packer.startup(function(use)
   use {
     "nvim-treesitter/nvim-treesitter", -- better syntax highlighting
     run = ":TSUpdate",
-    "p00f/nvim-ts-rainbow", -- rainbow bracket colorizing
     }
 
   use "JoosepAlviste/nvim-ts-context-commentstring" -- gcc command is context-aware

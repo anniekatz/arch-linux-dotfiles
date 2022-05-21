@@ -8,9 +8,11 @@
 #}
 
 
-lxsession &
 nitrogen --restore &
-#nm-applet &
-optimus-manager-qt &
 picom -b --config $HOME/.config/picom/picom.conf &
-#volumeicon &
+lxsession &
+volumeicon &
+
+# Autostart apps taken care of by LightDM currently
+#nm-applet &
+#optimus-manager-qt &

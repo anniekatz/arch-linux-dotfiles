@@ -14,7 +14,7 @@ use_panel_specific_icons=false
 lmb_slider=false
 mmb_mute=false
 use_horizontal_slider=false
-show_sound_level=true
+show_sound_level=false
 use_transparent_background=false
 
 [Hotkeys]

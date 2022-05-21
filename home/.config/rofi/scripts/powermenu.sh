@@ -34,6 +34,7 @@ case $chosen in
 			systemctl suspend
         ;;
     $logout)
-		loginctl terminate-session ${XDG_SESSION_ID-}
+		loginctl terminate-user annie
+        
         ;;
 esac

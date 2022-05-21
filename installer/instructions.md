@@ -9,15 +9,19 @@
 3. Connect to WiFi using iwctl
 	
 	> iwctl
-	   > station <STATION> connect <WIFI SSID NAME> '''
-	* wifi stations are usualy wlan0, wlo1, etc.
+	
+    > station {STATION} connect {WIFI SSID NAME}
+	
+    * wifi stations are usualy wlan0, wlo1, etc.
 
 4. Refresh servers
 	
 	> pacman -Syy
 
 5. Partition disk (ex. nvme0n1) using fdisk, gdisk or cfdisk
-	* Warning: manipulating disk may remove data
+	
+    * Warning: manipulating disk may remove data
+
 	
 	> cfdisk /dev/nvme0n1
 	
@@ -34,13 +38,16 @@
 6. Make file systems
 	
 	> mkfs.vfat /dev/nvme0n1p1
+
 	> mkfs.ext4 /dev/nvme0n1p2
 
 7. Mount partitions
 	
 	> mount /dev/nvme0n1p2 /mnt
-	> mkdir -p /mnt/boot/efi
-	> mount /dev/nvme0n1p1 /mnt/boot/efi
+	
+    > mkdir -p /mnt/boot/efi
+	
+    > mount /dev/nvme0n1p1 /mnt/boot/efi
 
 8. Install base
 	
@@ -59,12 +66,11 @@
 
 12. Clone Dotfiles repo
 	
-	> git clone https://github.com/anniekatz/LinuxDesktopDotfiles 
+	> git clone https://github.com/anniekatz/Dotfiles 
 
 13. Run base install script
 	* Edit script first with neovim to include chosen username, passwords, hostname, etc.
 	* Change name of folder for easy typing and run script
-	    > mv ./LinuxDesktopDotfiles ./Dotfiles
 
 		> chmod +x ./Dotfiles/installer/first-install-script.sh
 	
@@ -79,8 +85,10 @@
 15. Exit and reboot
 	
 	> exit
-	> umount -a
-	> reboot
+	
+    > umount -a
+	
+    > reboot
 
 16. Log in as user with username and password
 
@@ -100,11 +108,17 @@
 20. Run post-install script
 	
 	> sudo chown -R annie:users ./Dotfiles/*
-	> chmod +x ~/Dotfiles/installer/post-install-script.sh
-	> ~/Dotfiles/installer/post-install-script.sh
 
-	* Follow prompts. (Install wireguard instead of pipewire-media-session)
+	> chmod +x ~/Dotfiles/installer/post-install-script.sh
 	
+    > ~/Dotfiles/installer/post-install-script.sh
+
+	* Follow prompts. 
+        * Install wireplumber instead of pipewire-media-session
+        * Use xdg-desktop-portal-gtk
+    
+    * Important: Install zramd and mullvad-vpn manually after this, as they tend to have issues in installer script
+
 21. Configure grub to work with MSI fan
 	
 	> sudo nvim /etc/default/grub

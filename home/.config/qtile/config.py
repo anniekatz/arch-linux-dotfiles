@@ -9,11 +9,11 @@ from libqtile.config import Key, Screen, Group, Drag, Match
 from libqtile.lazy import lazy
 
 # Theme Choice
-#from themes import dracula
-#colors = dracula.init_colors()
+from themes import dracula
+colors = dracula.init_colors()
 
-from themes import vault
-colors = vault.init_colors()
+#from themes import vault
+#colors = vault.init_colors()
 
 
 mod = "mod4"
@@ -62,11 +62,11 @@ keys = [
     Key([mod], "r", 
         lazy.spawn(home + "/.local/bin/newsboat-fix"), desc="RSS newsboat"),
     Key([mod], "g", 
-        lazy.spawn("steam"), desc="steam"),
+        lazy.spawn("github-desktop"), desc="github desktop"),
     Key([mod], "i", 
         lazy.spawn("inkscape"), desc="inkscape"),
     Key([mod], "s",
-        lazy.spawn("wine C:/'Program Files'/Scrivener3/Scrivener"), desc="scrivener"),
+        lazy.spawn("steam"), desc="steam"),
     Key([mod], "n", 
         lazy.spawn("notion-app-enhanced"), desc="notion"),
     Key([mod, "shift"], 

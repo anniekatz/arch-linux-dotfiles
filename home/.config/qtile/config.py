@@ -46,7 +46,7 @@ keys = [
     Key([mod], "b", 
         lazy.spawn(browser), desc="brave"),
     Key([mod], "c", 
-        lazy.spawn(terminal + " nvim"), desc="coding/nvim"),
+        lazy.spawn("code"), desc="vscode"),
     Key([mod], "f", 
         lazy.spawn("pcmanfm"), desc="file manager"),
     Key([mod], "h", 
@@ -92,6 +92,10 @@ keys = [
     Key(
         [mod1, "shift"], "s",
         lazy.spawn("scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
+    Key(
+        [mod], "F12",
+        lazy.spawn("scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
+
 
 # QTILE KEYS
 # CTRL 

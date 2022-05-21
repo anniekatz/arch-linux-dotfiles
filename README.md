@@ -1,4 +1,10 @@
 # Dotfiles
+Config for personal Linus Desktop
+
+Distro: Arch Linux
+WM: Qtile
+Desktop Manager: LightDM
+
 (for when I want to wipe my poor SSD and start over for the 300th time)
 
 ## Installation

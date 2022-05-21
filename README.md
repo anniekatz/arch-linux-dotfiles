@@ -1,11 +1,12 @@
 # Dotfiles
-Config for personal Linus Desktop
+
+Config files for personal Linux desktop (for when I want to wipe my poor SSD and start over for the 300th time)
+
 
 Distro: Arch Linux
 WM: Qtile
 Desktop Manager: LightDM
 
-(for when I want to wipe my poor SSD and start over for the 300th time)
 
 ## Installation
 
@@ -46,11 +47,13 @@ Current Themes:
 
 ## To Do
 
-* Upload custom LibreOffice themes
-* Convert Neovim configuration to lua
 * Update keybindings page
+* Update themes
+* Update packages
 
 ## Done
+
+* ~~Convert Neovim configuration to lua~~
 * ~~Create bash installer script~~
 * ~~Fix system tray colors in Vault theme~~
 

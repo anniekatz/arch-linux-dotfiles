@@ -47,12 +47,12 @@ Current Themes:
 
 ## To Do
 
-* Update keybindings page
-* Update themes
-* Update packages
 
 ## Done
 
+* ~~Update keybindings page~~
+* ~~Update themes~~
+* ~~Update packages~~
 * ~~Convert Neovim configuration to lua~~
 * ~~Create bash installer script~~
 * ~~Fix system tray colors in Vault theme~~

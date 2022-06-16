@@ -24,6 +24,7 @@ dunst
 efibootmgr
 exfat-utils
 ffmpegthumbnailer
+fwupd
 fzf
 github-desktop
 gnome-disk-utility

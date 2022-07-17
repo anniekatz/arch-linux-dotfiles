@@ -10,7 +10,7 @@ https://lukesmith.xyz/rss.xml "~· Luke Smith (Blog)" "blogs"
 https://languagelog.ldc.upenn.edu/nll/?feed=rss2 "~· Language Log" "blogs"
 https://xkcd.com/atom.xml "~· XKCD" "blogs"
 https://based.cooking/rss.xml "~· Based Cooking" "blogs"
-https://lukesmith.xyz/lindy.xml "~· LindyPress" "blogs"
+https://antigonejournal.com/articles/feed/ "~· Antigone Journal" "blogs"
 
 "query:Podcasts:tags # \"podcasts\""
 https://www.patreon.com/rss/newmodels?auth=Wl1PoBFWYTSOIqu78sg6KN_53IeBlOUE "~· New Models" "podcasts"

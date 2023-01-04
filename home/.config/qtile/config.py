@@ -36,9 +36,7 @@ keys = [
 # APPS AND LAUNCHERS
 # SUPER KEY
     Key([mod], "space", 
-        lazy.spawn("nwggrid -p -o 0.5"), desc="launcher"),
-    Key([mod, "shift"], 
-        "d", lazy.spawn("dmenu_run"), desc="dmenu"),
+        lazy.spawn("dmenu_run"), desc="dmenu"),
     Key([mod], "t", 
         lazy.spawn("timeshift-launcher"), desc="timeshift"),
     Key([mod], "Return", 
@@ -195,7 +193,7 @@ layouts = [
         vspace=2,
         panel_width=210,
     ),
-    layout.Floating(**layout_theme, fullscreen_border_width=3, max_border_width=3),
+    layout.Floating(**layout_theme),
 ]
 
 groups = []
@@ -617,7 +615,7 @@ floating_types = ["notification", "toolbar", "splash", "dialog"]
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(**layout_theme,
+floating_layout =layout.Floating(**layout_theme,
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
@@ -629,9 +627,9 @@ floating_layout = layout.Floating(**layout_theme,
         Match(title="pinentry"),
         Match(wm_class="dialog"),
         Match(wm_class="download"),
-        # Match(wm_class='steam'),
+        Match(wm_class='steam'),
         Match(wm_class="error"),  # GPG key password entry
-    ]
+    ] 
 )
 
 auto_fullscreen = True

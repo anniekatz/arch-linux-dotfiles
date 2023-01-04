@@ -67,7 +67,6 @@ nss-mdns
 nvidia
 nvidia-settings
 nvidia-utils
-nwg-launchers
 optimus-manager
 optimus-manager-qt
 pacgraph
@@ -75,7 +74,7 @@ papirus-icon-theme
 pavucontrol
 pcmanfm-gtk3
 pdfjs
-picom-ibhagwan-git
+picom
 pipewire
 pipewire-alsa
 pipewire-jack

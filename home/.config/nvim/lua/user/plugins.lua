@@ -15,7 +15,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
+-- Reload nvim automatically upon plugins.lua save
 vim.cmd [[
   augroup packer_user_config
     autocmd!
@@ -23,7 +23,7 @@ vim.cmd [[
   augroup end
 ]]
 
--- Use a protected call so we don't error out on first use
+-- Protected call
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
   return
@@ -48,10 +48,9 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons" -- Provides icons
   use "kyazdani42/nvim-tree.lua" -- File explorer for neovim
+  use "mbbill/undotree" -- Look at undos
   use "moll/vim-bbye" -- Delete buffers without closing windows
   use "nvim-lualine/lualine.nvim" -- Lua statusline at bottom
-  use "ahmedkhalf/project.nvim" -- Project Management
-  use "lewis6991/impatient.nvim" -- Improve startup time for Neovim
   use "lukas-reineke/indent-blankline.nvim" -- Can add indentation lines
   use "goolord/alpha-nvim" -- Nvim Greeter
   use "ap/vim-css-color" -- Preview HEX colors
@@ -59,11 +58,16 @@ return packer.startup(function(use)
   use "folke/which-key.nvim" -- Popup that shows possible key combinations
 
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
   use "dracula/vim"
   use "morhetz/gruvbox"
-  -- cmp plugins
+
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/mason.nvim" -- manage LSP servers
+  use "williamboman/mason-lspconfig.nvim" -- LSP config
+ 
+  -- Completions
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
@@ -71,30 +75,26 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp" -- LSP completions
 
+ 
   -- Snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-  -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- Telescope
   use "nvim-telescope/telescope.nvim" --fuzzy file finding + more
   use "nvim-telescope/telescope-media-files.nvim" -- view media files in telescope
 
   -- Treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter", -- better syntax highlighting
-    run = ":TSUpdate",
-    }
+  use {"nvim-treesitter/nvim-treesitter", -- treesitter
+    run = ":TSUpdate"}
+  use "nvim-treesitter/playground"
 
   use "JoosepAlviste/nvim-ts-context-commentstring" -- gcc command is context-aware
 
   -- Git
   use "lewis6991/gitsigns.nvim" -- git symbols + commands
+  use "github/copilot.vim" -- github copilot
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

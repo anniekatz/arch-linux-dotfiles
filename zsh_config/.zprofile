@@ -1,17 +1,19 @@
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Setting PATH for Python 3.10
-# The original version is saved in .zprofile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
-export PATH
-export PATH=/Users/annie/homebrew/bin:$PATH
 
-alias vim=nvim
 alias python=python3
 alias pip=pip3
+alias vim=nvim
 
 neofetch
+
 
 
 # Added by Toolbox App
 export PATH="$PATH:/Users/annie/Library/Application Support/JetBrains/Toolbox/scripts"
 
+export PATH="$PATH:/opt/homebrew/lib/node_modules/npm"
+export PATH="$PATH:/opt/homebrew/lib"
+export JAVA_HOME="$PATH:/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"

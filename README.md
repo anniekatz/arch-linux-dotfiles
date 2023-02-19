@@ -1,6 +1,6 @@
 # Dotfiles
 
-Config files for personal Linux desktop (for when I want to wipe my poor SSD and start over for the 300th time)
+Config files for personal Linux desktop (for when I want to wipe my poor SSD and start over for the 300th time). Includes proprietary nvidia drivers FYI.
 
 
 Distro: Arch Linux

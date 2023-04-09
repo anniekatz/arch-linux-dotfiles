@@ -34,7 +34,6 @@ cp -r ~/Dotfiles/home/.config/qtile ~/.config/
 cp -r ~/Dotfiles/home/.config/neofetch ~/.config/
 cp -r ~/Dotfiles/home/.config/newsboat ~/.config/
 cp -r ~/Dotfiles/home/.config/nvim ~/.config/
-cp -r ~/Dotfiles/home/.config/nwg-launchers ~/.config/
 cp -r ~/Dotfiles/home/.config/picom ~/.config/
 cp -r ~/Dotfiles/home/.config/qutebrowser ~/.config/
 cp -r ~/Dotfiles/home/.config/ranger ~/.config/

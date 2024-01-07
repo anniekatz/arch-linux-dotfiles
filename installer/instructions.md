@@ -17,6 +17,7 @@
 4. Refresh servers
 	
 	> pacman -Syy
+	> pacman -S archlinux-keyring 
 
 5. Partition disk (ex. nvme0n1) using fdisk, gdisk or cfdisk
 	

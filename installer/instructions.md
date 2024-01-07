@@ -63,15 +63,14 @@
 	> arch-chroot /mnt
 
 11. Change fstab file
-	* edit /etc/fstab with neovim or nano to include the options (noatime,commit=60,discard) in root (/) partition
+	* edit /etc/fstab - include the options (noatime,commit=60,discard) in root (/) partition
 
 12. Clone Dotfiles repo
 	
 	> git clone https://github.com/anniekatz/Dotfiles 
 
 13. Run base install script
-	* Edit script first with neovim to include chosen username, passwords, hostname, etc.
-	* Change name of folder for easy typing and run script
+	* Edit script first to include usernames, passwords, hostname, etc.
 
 		> chmod +x ./Dotfiles/installer/first-install-script.sh
 	
@@ -79,9 +78,9 @@
 
 	* Follow prompts
 
-14. Move Dotfiles repo
+14. Move Dotfiles repo if u want
 	
-	> mv Dotfiles /home/annie/
+	> mv Dotfiles /home/{username}/
 
 15. Exit and reboot
 	
@@ -108,7 +107,7 @@
 
 20. Run post-install script
 	
-	> sudo chown -R annie:users ./Dotfiles/*
+	> sudo chown -R {username}:users ./Dotfiles/*
 
 	> chmod +x ~/Dotfiles/installer/post-install-script.sh
 	

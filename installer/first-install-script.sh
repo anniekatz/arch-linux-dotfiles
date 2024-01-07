@@ -14,9 +14,9 @@ echo "127.0.1.1 computer.localdomain computer" >> /etc/hosts
 # replace <PASSWORD> with chosen password
 echo root:<PASSWORD> | chpasswd
 
-pacman -S grub efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-headers xdg-user-dirs xdg-utils gvfs bash-completion rsync reflector acpi acpi_call acpid upower openbsd-netcat iptables-nft ipset firewalld os-prober ntfs-3g
+pacman -S grub efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-headers gvfs bash-completion rsync reflector acpi acpi_call acpid openbsd-netcat iptables-nft ipset firewalld os-prober ntfs-3g wayland wayland-protocols wayland-utils xorg-xwayland wget gdm wl-clipboard hyprland
 
-pacman -S nvidia xf86-video-intel nvidia-settings nvidia-utils
+pacman -S nvidia nvidia-settings nvidia-utils mesa vulkan-intel
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg

@@ -17,6 +17,7 @@
 4. Refresh servers
 	
 	> pacman -Syy
+ 
 	> pacman -S archlinux-keyring 
 
 5. Partition disk (ex. nvme0n1) using fdisk, gdisk or cfdisk
@@ -112,10 +113,6 @@
 	> chmod +x ~/Dotfiles/installer/post-install-script.sh
 	
     > ~/Dotfiles/installer/post-install-script.sh
-
-	* Follow prompts. 
-        * Install wireplumber instead of pipewire-media-session
-        * Use xdg-desktop-portal-gtk
     
     * Important: Install zramd and mullvad-vpn manually after this, as they tend to have issues in installer script
 
